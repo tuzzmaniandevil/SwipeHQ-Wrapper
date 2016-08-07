@@ -1,7 +1,7 @@
 # SwipeHQ-Wrapper
 a lightweight Java wrapper for the SwipeHQ API
 
-## Maven
+## Using this with Maven
 You can easily use this package using Maven by adding this repository:
 
 ```
