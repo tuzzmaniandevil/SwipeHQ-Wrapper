@@ -16,6 +16,7 @@
 package co.tuzza.swipehq.models;
 
 import co.tuzza.swipehq.fields.Country;
+import co.tuzza.swipehq.fields.Currency;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -204,8 +205,43 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_currency = td_currency;
     }
 
+    /**
+     * the currency the transaction is in. (Optional, if not passed the system
+     * defaults to your default currency.)
+     *
+     * @param currency
+     */
+    public void setCurrency(Currency currency) {
+        if (currency != null) {
+            this.td_currency = currency.getSymbol();
+        } else {
+            this.td_currency = null;
+        }
+    }
+
+    /**
+     * the currency the transaction is in. (Optional, if not passed the system
+     * defaults to your default currency. This parameter accepts the currency
+     * symbol. Eg: td_currency=aud.)
+     *
+     * @param td_currency
+     * @return
+     */
     public CreateTransactionRequest withCurrency(String td_currency) {
         this.td_currency = td_currency;
+
+        return this;
+    }
+
+    /**
+     * the currency the transaction is in. (Optional, if not passed the system
+     * defaults to your default currency.)
+     *
+     * @param currency
+     * @return
+     */
+    public CreateTransactionRequest withCurrency(Currency currency) {
+        this.setCurrency(currency);
 
         return this;
     }
