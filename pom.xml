@@ -59,7 +59,7 @@
         <repository>
             <id>bintray-tuzzmaniandevil-SwipeHQ-Wrapper</id>
             <name>tuzzmaniandevil-SwipeHQ-Wrapper</name>
-            <url>https://api.bintray.com/maven/tuzzmaniandevil/SwipeHQ-Wrapper/[PACKAGE_NAME]/;publish=1</url>
+            <url>https://api.bintray.com/maven/tuzzmaniandevil/SwipeHQ-Wrapper/SwipeHQ-Wrapper/;publish=1</url>
         </repository>
     </distributionManagement>
 
