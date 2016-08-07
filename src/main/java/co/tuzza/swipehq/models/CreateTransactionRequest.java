@@ -58,6 +58,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_item = td_item;
     }
 
+    public CreateTransactionRequest withItem(String td_item) {
+        this.td_item = td_item;
+
+        return this;
+    }
+
     public String getDescription() {
         return td_description;
     }
@@ -74,6 +80,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_description = td_description;
     }
 
+    public CreateTransactionRequest withDescription(String td_description) {
+        this.td_description = td_description;
+
+        return this;
+    }
+
     public String getAmount() {
         return td_amount;
     }
@@ -85,6 +97,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setAmount(String td_amount) {
         this.td_amount = td_amount;
+    }
+
+    public CreateTransactionRequest withAmount(String td_amount) {
+        this.td_amount = td_amount;
+
+        return this;
     }
 
     public String getDuration() {
@@ -103,6 +121,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_duration = td_duration;
     }
 
+    public CreateTransactionRequest withDuration(String td_duration) {
+        this.td_duration = td_duration;
+
+        return this;
+    }
+
     public String getDefaultQuantity() {
         return td_default_quantity;
     }
@@ -118,6 +142,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_default_quantity = td_default_quantity;
     }
 
+    public CreateTransactionRequest withDefaultQuantity(String td_default_quantity) {
+        this.td_default_quantity = td_default_quantity;
+
+        return this;
+    }
+
     public String getUserData() {
         return td_user_data;
     }
@@ -129,6 +159,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setUserData(String td_user_data) {
         this.td_user_data = td_user_data;
+    }
+
+    public CreateTransactionRequest withUserData(String td_user_data) {
+        this.td_user_data = td_user_data;
+
+        return this;
     }
 
     public String getCurrency() {
@@ -144,6 +180,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setCurrency(String td_currency) {
         this.td_currency = td_currency;
+    }
+
+    public CreateTransactionRequest withCurrency(String td_currency) {
+        this.td_currency = td_currency;
+
+        return this;
     }
 
     public String getToken() {
@@ -163,6 +205,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_token = td_token;
     }
 
+    public CreateTransactionRequest withToken(String td_token) {
+        this.td_token = td_token;
+
+        return this;
+    }
+
     public String getCallbackUrl() {
         return td_callback_url;
     }
@@ -176,6 +224,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setCallbackUrl(String td_callback_url) {
         this.td_callback_url = td_callback_url;
+    }
+
+    public CreateTransactionRequest withCallbackUrl(String td_callback_url) {
+        this.td_callback_url = td_callback_url;
+
+        return this;
     }
 
     public String getLpnUrl() {
@@ -192,6 +246,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_lpn_url = td_lpn_url;
     }
 
+    public CreateTransactionRequest withLpnUrl(String td_lpn_url) {
+        this.td_lpn_url = td_lpn_url;
+
+        return this;
+    }
+
     public String getEmail() {
         return td_email;
     }
@@ -204,6 +264,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setEmail(String td_email) {
         this.td_email = td_email;
+    }
+
+    public CreateTransactionRequest withEmail(String td_email) {
+        this.td_email = td_email;
+
+        return this;
     }
 
     public String getFirstName() {
@@ -220,6 +286,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_first_name = td_first_name;
     }
 
+    public CreateTransactionRequest withFirstName(String td_first_name) {
+        this.td_first_name = td_first_name;
+
+        return this;
+    }
+
     public String getLastName() {
         return td_last_name;
     }
@@ -232,6 +304,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setLastName(String td_last_name) {
         this.td_last_name = td_last_name;
+    }
+
+    public CreateTransactionRequest withLastName(String td_last_name) {
+        this.td_last_name = td_last_name;
+
+        return this;
     }
 
     public String getCountry() {
@@ -248,6 +326,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_country = td_country;
     }
 
+    public CreateTransactionRequest withCountry(String td_country) {
+        this.td_country = td_country;
+
+        return this;
+    }
+
     public String getState() {
         return td_state;
     }
@@ -260,6 +344,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setState(String td_state) {
         this.td_state = td_state;
+    }
+
+    public CreateTransactionRequest withState(String td_state) {
+        this.td_state = td_state;
+
+        return this;
     }
 
     public String getCity() {
@@ -276,6 +366,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_city = td_city;
     }
 
+    public CreateTransactionRequest withCity(String td_city) {
+        this.td_city = td_city;
+
+        return this;
+    }
+
     public String getCompany() {
         return td_company;
     }
@@ -288,6 +384,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setCompany(String td_company) {
         this.td_company = td_company;
+    }
+
+    public CreateTransactionRequest withCompany(String td_company) {
+        this.td_company = td_company;
+
+        return this;
     }
 
     public String getPostcode() {
@@ -304,6 +406,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_post_code = td_post_code;
     }
 
+    public CreateTransactionRequest withPostcode(String td_post_code) {
+        this.td_post_code = td_post_code;
+
+        return this;
+    }
+
     public String getPhone() {
         return td_phone;
     }
@@ -318,6 +426,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_phone = td_phone;
     }
 
+    public CreateTransactionRequest withPhone(String td_phone) {
+        this.td_phone = td_phone;
+
+        return this;
+    }
+
     public String getAddress() {
         return td_address;
     }
@@ -330,6 +444,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setAddress(String td_address) {
         this.td_address = td_address;
+    }
+
+    public CreateTransactionRequest withAddress(String td_address) {
+        this.td_address = td_address;
+
+        return this;
     }
 
     public String getSuburb() {
@@ -347,6 +467,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_suburb = td_suburb;
     }
 
+    public CreateTransactionRequest withSuburb(String td_suburb) {
+        this.td_suburb = td_suburb;
+
+        return this;
+    }
+
     public String getDob() {
         return td_dob;
     }
@@ -359,6 +485,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setDob(String td_dob) {
         this.td_dob = td_dob;
+    }
+
+    public CreateTransactionRequest withDob(String td_dob) {
+        this.td_dob = td_dob;
+
+        return this;
     }
 
     public String getSsn() {
@@ -375,6 +507,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_ssn = td_ssn;
     }
 
+    public CreateTransactionRequest withSsn(String td_ssn) {
+        this.td_ssn = td_ssn;
+
+        return this;
+    }
+
     public String getReference() {
         return td_reference;
     }
@@ -388,6 +526,12 @@ public class CreateTransactionRequest implements BaseRequest {
      */
     public void setReference(String td_reference) {
         this.td_reference = td_reference;
+    }
+
+    public CreateTransactionRequest withReference(String td_reference) {
+        this.td_reference = td_reference;
+
+        return this;
     }
 
     @Override

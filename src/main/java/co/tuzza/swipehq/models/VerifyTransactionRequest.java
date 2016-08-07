@@ -24,12 +24,24 @@ public class VerifyTransactionRequest implements BaseRequest {
         this.transaction_id = transaction_id;
     }
 
+    public VerifyTransactionRequest withTransactionId(String transaction_id) {
+        this.transaction_id = transaction_id;
+
+        return this;
+    }
+
     public String getIdentifierId() {
         return identifier_id;
     }
 
     public void setIdentifierId(String identifier_id) {
         this.identifier_id = identifier_id;
+    }
+
+    public VerifyTransactionRequest withIdentifierId(String identifier_id) {
+        this.identifier_id = identifier_id;
+
+        return this;
     }
 
     @Override
