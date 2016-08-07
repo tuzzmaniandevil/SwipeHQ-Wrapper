@@ -22,8 +22,8 @@ import co.tuzza.swipehq.models.CreateTransactionRequest;
 import co.tuzza.swipehq.models.CreateTransactionResponse;
 import co.tuzza.swipehq.models.VerifyTransactionRequest;
 import co.tuzza.swipehq.models.VerifyTransactionResponse;
-import co.tuzza.swipehq.transport.SwipeHQTransport;
-import co.tuzza.swipehq.transport.Transport;
+import co.tuzza.swipehq.transport.AsyncHttpTransport;
+import co.tuzza.swipehq.transport.HttpTransport;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -34,9 +34,9 @@ import java.util.Map;
 public class SwipeHQClient {
 
     private final Map<String, String> params = new LinkedHashMap();
-    private final Transport transport;
+    private final HttpTransport transport;
 
-    public SwipeHQClient(Transport transport, String merchantId, String apiKey) {
+    public SwipeHQClient(HttpTransport transport, String merchantId, String apiKey) {
         params.put("merchant_id", merchantId);
         params.put("api_key", apiKey);
         this.transport = transport;
@@ -45,7 +45,7 @@ public class SwipeHQClient {
     public SwipeHQClient(String merchantId, String apiKey) {
         params.put("merchant_id", merchantId);
         params.put("api_key", apiKey);
-        this.transport = new SwipeHQTransport();
+        this.transport = new AsyncHttpTransport();
     }
 
     /**

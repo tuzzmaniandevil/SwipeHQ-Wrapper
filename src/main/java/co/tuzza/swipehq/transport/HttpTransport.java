@@ -21,7 +21,7 @@ import java.util.Map;
  *
  * @author Wesley <wesley@tuzza.co>
  */
-public interface Transport {
+public interface HttpTransport {
 
     public <T> T doGet(String url, Map<String, String> params, Class<T> c) throws Exception;
 

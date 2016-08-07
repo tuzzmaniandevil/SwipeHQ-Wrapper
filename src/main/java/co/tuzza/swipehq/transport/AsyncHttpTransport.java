@@ -26,16 +26,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * an HttpTransport using AsyncHttpClient. see
+ * <a href="https://github.com/AsyncHttpClient/async-http-client">https://github.com/AsyncHttpClient/async-http-client</a>
  *
  * @author dylan
  */
-public class SwipeHQTransport implements Transport {
+public class AsyncHttpTransport implements HttpTransport {
 
-    private static final Logger log = LoggerFactory.getLogger(SwipeHQTransport.class);
+    private static final Logger log = LoggerFactory.getLogger(AsyncHttpTransport.class);
 
     private final AsyncHttpClient client;
 
-    public SwipeHQTransport() {
+    public AsyncHttpTransport() {
         client = new AsyncHttpClient(new AsyncHttpClientConfig.Builder().build());
     }
 
