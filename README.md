@@ -1,2 +1,2 @@
 # SwipeHQ-Wrapper
-s lightweight Java wrapper for the SwipeHQ API
+a lightweight Java wrapper for the SwipeHQ API
