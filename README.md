@@ -13,7 +13,7 @@ You can easily use this package using Maven by adding this repository:
 </repositories>
 ```
 
-And adding this dependecy:
+And adding this dependency:
 
 ```
 <dependency>
