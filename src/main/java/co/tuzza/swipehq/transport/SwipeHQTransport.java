@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2016 Tuzza.co.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 package co.tuzza.swipehq.transport;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.AsyncHttpClientConfig;
 import com.ning.http.client.ListenableFuture;
@@ -30,17 +29,17 @@ import org.slf4j.LoggerFactory;
  *
  * @author dylan
  */
-public class SwipeHQTransport {
+public class SwipeHQTransport implements Transport {
 
     private static final Logger log = LoggerFactory.getLogger(SwipeHQTransport.class);
 
-    private final ObjectMapper mapper = new ObjectMapper();
     private final AsyncHttpClient client;
 
     public SwipeHQTransport() {
         client = new AsyncHttpClient(new AsyncHttpClientConfig.Builder().build());
     }
 
+    @Override
     public <T> T doGet(String url, Map<String, String> params, Class<T> c) throws InterruptedException, ExecutionException, IOException {
         try {
             AsyncHttpClient.BoundRequestBuilder requestBuilder = client.prepareGet(url);
@@ -57,9 +56,8 @@ public class SwipeHQTransport {
             int statusCode = resp.getStatusCode();
             if (statusCode == 200) {
                 String responseBody = resp.getResponseBody();
-                T o = mapper.readValue(responseBody, c);
 
-                return o;
+                return ResponseParser.parseResponse(responseBody, c);
             } else {
                 log.error("Error doing get | Status Code {} | Status Text {}", statusCode, resp.getStatusText());
             }
@@ -78,6 +76,7 @@ public class SwipeHQTransport {
         return null;
     }
 
+    @Override
     public <T> T doPost(String url, Map<String, String> params, Class<T> c) throws InterruptedException, ExecutionException, IOException {
         try {
             AsyncHttpClient.BoundRequestBuilder requestBuilder = client.preparePost(url);
@@ -94,9 +93,8 @@ public class SwipeHQTransport {
             int statusCode = resp.getStatusCode();
             if (statusCode == 200) {
                 String responseBody = resp.getResponseBody();
-                T o = mapper.readValue(responseBody, c);
 
-                return o;
+                return ResponseParser.parseResponse(responseBody, c);
             } else {
                 log.error("Error doing POST | Status Code {} | Status Text {}", statusCode, resp.getStatusText());
             }

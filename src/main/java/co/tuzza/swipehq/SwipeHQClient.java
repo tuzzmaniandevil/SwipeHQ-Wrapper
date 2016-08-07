@@ -23,10 +23,9 @@ import co.tuzza.swipehq.models.CreateTransactionResponse;
 import co.tuzza.swipehq.models.VerifyTransactionRequest;
 import co.tuzza.swipehq.models.VerifyTransactionResponse;
 import co.tuzza.swipehq.transport.SwipeHQTransport;
-import java.io.IOException;
+import co.tuzza.swipehq.transport.Transport;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 /**
  *
@@ -35,7 +34,13 @@ import java.util.concurrent.ExecutionException;
 public class SwipeHQClient {
 
     private final Map<String, String> params = new LinkedHashMap();
-    private final SwipeHQTransport transport;
+    private final Transport transport;
+
+    public SwipeHQClient(Transport transport, String merchantId, String apiKey) {
+        params.put("merchant_id", merchantId);
+        params.put("api_key", apiKey);
+        this.transport = transport;
+    }
 
     public SwipeHQClient(String merchantId, String apiKey) {
         params.put("merchant_id", merchantId);
@@ -49,12 +54,10 @@ public class SwipeHQClient {
      *
      * @param createTransactionRequest
      * @return
-     * @throws InterruptedException
-     * @throws ExecutionException
-     * @throws IOException
+     * @throws java.lang.Exception
      */
     public CreateTransactionResponse createTransaction(CreateTransactionRequest createTransactionRequest)
-            throws InterruptedException, ExecutionException, IOException {
+            throws Exception {
         return doRequest(createTransactionRequest, CreateTransactionResponse.class, "POST");
     }
 
@@ -64,12 +67,10 @@ public class SwipeHQClient {
      *
      * @param verifyTransactionRequest
      * @return
-     * @throws InterruptedException
-     * @throws ExecutionException
-     * @throws IOException
+     * @throws java.lang.Exception
      */
     public VerifyTransactionResponse verifyTransaction(VerifyTransactionRequest verifyTransactionRequest)
-            throws InterruptedException, ExecutionException, IOException {
+            throws Exception {
         return doRequest(verifyTransactionRequest, VerifyTransactionResponse.class, "GET");
     }
 
@@ -80,12 +81,10 @@ public class SwipeHQClient {
      * @param transaction_id
      * @param identifier_id
      * @return
-     * @throws InterruptedException
-     * @throws ExecutionException
-     * @throws IOException
+     * @throws java.lang.Exception
      */
     public VerifyTransactionResponse verifyTransaction(String transaction_id, String identifier_id)
-            throws InterruptedException, ExecutionException, IOException {
+            throws Exception {
         VerifyTransactionRequest req = new VerifyTransactionRequest()
                 .withIdentifierId(identifier_id)
                 .withTransactionId(transaction_id);
@@ -99,16 +98,14 @@ public class SwipeHQClient {
      *
      * @param createSubscriptionRequest
      * @return
-     * @throws InterruptedException
-     * @throws ExecutionException
-     * @throws IOException
+     * @throws java.lang.Exception
      */
     public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest)
-            throws InterruptedException, ExecutionException, IOException {
+            throws Exception {
         return doRequest(createSubscriptionRequest, CreateSubscriptionResponse.class, "POST");
     }
 
-    private <T> T doRequest(BaseRequest request, Class<T> responseClass, String type) throws InterruptedException, ExecutionException, IOException {
+    private <T> T doRequest(BaseRequest request, Class<T> responseClass, String type) throws Exception {
         Map<String, String> reqParams = new LinkedHashMap();
         reqParams.putAll(params);
 
