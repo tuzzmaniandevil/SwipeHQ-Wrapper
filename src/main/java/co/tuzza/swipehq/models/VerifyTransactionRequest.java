@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2016 Tuzza.co.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@ import java.util.Map;
  * The Verify Transaction API is used to check the status and verify a
  * particular transaction
  *
- * @author dylan
+ * @author Wesley <wesley@tuzza.co>
  */
 public class VerifyTransactionRequest implements BaseRequest {
 

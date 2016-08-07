@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2016 Tuzza.co.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  *
- * @author dylan
+ * @author Wesley <wesley@tuzza.co>
  */
 public class AbstractVerifyTransactionResponse {
 

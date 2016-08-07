@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2016 Tuzza.co.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +16,8 @@
 package co.tuzza.swipehq;
 
 import co.tuzza.swipehq.models.BaseRequest;
+import co.tuzza.swipehq.models.CreateSubscriptionRequest;
+import co.tuzza.swipehq.models.CreateSubscriptionResponse;
 import co.tuzza.swipehq.models.CreateTransactionRequest;
 import co.tuzza.swipehq.models.CreateTransactionResponse;
 import co.tuzza.swipehq.models.VerifyTransactionRequest;
@@ -28,7 +30,7 @@ import java.util.concurrent.ExecutionException;
 
 /**
  *
- * @author dylan
+ * @author Wesley <wesley@tuzza.co>
  */
 public class SwipeHQClient {
 
@@ -89,6 +91,21 @@ public class SwipeHQClient {
                 .withTransactionId(transaction_id);
 
         return verifyTransaction(req);
+    }
+
+    /**
+     * This API is used to create ad-hoc subscriptions, where you pass in the
+     * relevant subscription details generated on your system.
+     *
+     * @param createSubscriptionRequest
+     * @return
+     * @throws InterruptedException
+     * @throws ExecutionException
+     * @throws IOException
+     */
+    public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest)
+            throws InterruptedException, ExecutionException, IOException {
+        return doRequest(createSubscriptionRequest, CreateSubscriptionResponse.class, "POST");
     }
 
     private <T> T doRequest(BaseRequest request, Class<T> responseClass, String type) throws InterruptedException, ExecutionException, IOException {

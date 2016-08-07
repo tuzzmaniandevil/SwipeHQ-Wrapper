@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2016 Tuzza.co.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,10 @@
  */
 package co.tuzza.swipehq.models;
 
+/**
+ *
+ * @author Wesley <wesley@tuzza.co>
+ */
 public class CreateTransactionResponse extends BaseResponse<AbstractTransactionResponse> {
 
 }

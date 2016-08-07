@@ -20,38 +20,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  *
  * @author Wesley <wesley@tuzza.co>
- * @param <T>
  */
-public abstract class BaseResponse<T> {
+public class AbstractCreateSubscriptionResponse {
 
-    @JsonProperty("response_code")
-    private String responseCode;
-
-    @JsonProperty("message")
-    private String message;
-
-    @JsonProperty("data")
-    private T data;
+    @JsonProperty(value = "identifier", required = false)
+    private String identifier;
 
     /**
-     * Integer value indicating the status of the API call
+     * The 'identifier' is the ID of the subscription identifier now setup in
+     * the Swipe Checkout system. When this ID is passed to the Subscriptions
+     * page via the 'identifier_id' parameter, the subscription details will be
+     * displayed.
      *
      * @return
      */
-    public String getResponseCode() {
-        return responseCode;
-    }
-
-    /**
-     * Text value describing the response code
-     *
-     * @return
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    public T getData() {
-        return data;
+    public String getIdentifier() {
+        return identifier;
     }
 }

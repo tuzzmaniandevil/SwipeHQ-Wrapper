@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2016 Tuzza.co.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,7 @@
  */
 package co.tuzza.swipehq.models;
 
+import co.tuzza.swipehq.fields.Country;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +30,7 @@ import java.util.Map;
  * is that a identifier can be setup for any item on your website, even if it is
  * unknown to Swipe Checkout.
  *
- * @author dylan
+ * @author Wesley <wesley@tuzza.co>
  */
 public class CreateTransactionRequest implements BaseRequest {
 
@@ -176,6 +177,12 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_user_data = td_user_data;
     }
 
+    /**
+     * Any user data you would like to pass. (Optional)
+     *
+     * @param td_user_data
+     * @return
+     */
     public CreateTransactionRequest withUserData(String td_user_data) {
         this.td_user_data = td_user_data;
 
@@ -341,8 +348,42 @@ public class CreateTransactionRequest implements BaseRequest {
         this.td_country = td_country;
     }
 
+    /**
+     * The credit card's billing country. This will automatically set the
+     * Billing Country field on the payment page.
+     *
+     * @param country
+     */
+    public void setCountry(Country country) {
+        if (country != null) {
+            this.td_country = country.getName();
+        } else {
+            this.td_country = null;
+        }
+    }
+
+    /**
+     * The credit card's billing country. This will automatically set the
+     * Billing Country field on the payment page.
+     *
+     * @param td_country
+     * @return
+     */
     public CreateTransactionRequest withCountry(String td_country) {
         this.td_country = td_country;
+
+        return this;
+    }
+
+    /**
+     * The credit card's billing country. This will automatically set the
+     * Billing Country field on the payment page.
+     *
+     * @param country
+     * @return
+     */
+    public CreateTransactionRequest withCountry(Country country) {
+        this.setCountry(country);
 
         return this;
     }
