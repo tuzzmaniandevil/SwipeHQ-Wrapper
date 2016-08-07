@@ -1,3 +1,18 @@
+/* 
+ * Copyright 2016 Tuzza.co.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package co.tuzza.swipehq;
 
 import co.tuzza.swipehq.models.BaseRequest;
@@ -54,6 +69,26 @@ public class SwipeHQClient {
     public VerifyTransactionResponse verifyTransaction(VerifyTransactionRequest verifyTransactionRequest)
             throws InterruptedException, ExecutionException, IOException {
         return doRequest(verifyTransactionRequest, VerifyTransactionResponse.class, "GET");
+    }
+
+    /**
+     * The Verify Transaction API is used to check the status and verify a
+     * particular transaction
+     *
+     * @param transaction_id
+     * @param identifier_id
+     * @return
+     * @throws InterruptedException
+     * @throws ExecutionException
+     * @throws IOException
+     */
+    public VerifyTransactionResponse verifyTransaction(String transaction_id, String identifier_id)
+            throws InterruptedException, ExecutionException, IOException {
+        VerifyTransactionRequest req = new VerifyTransactionRequest()
+                .withIdentifierId(identifier_id)
+                .withTransactionId(transaction_id);
+
+        return verifyTransaction(req);
     }
 
     private <T> T doRequest(BaseRequest request, Class<T> responseClass, String type) throws InterruptedException, ExecutionException, IOException {

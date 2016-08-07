@@ -15,25 +15,27 @@
  */
 package co.tuzza.swipehq.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  *
  * @author dylan
  */
-public class AbstractTransactionResponse {
+public class CreateSubscriptionRequest implements BaseRequest {
 
-    @JsonProperty(value = "identifier", required = false)
-    private String identifier;
+    private final static String URL = "https://api.swipehq.com/createSubscriptionIdentifier.php";
 
-    /**
-     * The 'identifier' is the ID of the transaction identifier now setup in the
-     * Swipe Checkout system. When this ID is passed to the Payments page via
-     * the 'identifier_id' parameter, the item details will be displayed.
-     *
-     * @return
-     */
-    public String getIdentifier() {
-        return identifier;
+    @Override
+    public Map<String, String> toParams() {
+        Map<String, String> params = new LinkedHashMap();
+
+        return params;
     }
+
+    @Override
+    public String url() {
+        return URL;
+    }
+
 }
