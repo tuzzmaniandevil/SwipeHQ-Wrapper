@@ -20,14 +20,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * The CreateProducts API is used to make new products to be avaliable for
- * customers to purchase. After a product has been made it may then be used with
- * the payments page, where the the Product ID is required.
  *
  * @author Wesley <wesley@tuzza.co>
  */
-public class CreateProductRequest implements BaseRequest {
+public class UpdateProductRequest implements BaseRequest {
 
+    private String product_id;
     private String prod_name;
     private String prod_rrp;
     private String prod_quantity;
@@ -49,7 +47,26 @@ public class CreateProductRequest implements BaseRequest {
     private String prod_declined_url;
 
     /**
-     * Product name (Compulsory)
+     * Product ID (Compulsory)
+     *
+     * @return
+     */
+    public String getProductId() {
+        return product_id;
+    }
+
+    public void setProductId(String product_id) {
+        this.product_id = product_id;
+    }
+
+    public UpdateProductRequest withProductId(String product_id) {
+        this.product_id = product_id;
+
+        return this;
+    }
+
+    /**
+     * Product name (Optional)
      *
      * @return
      */
@@ -58,7 +75,7 @@ public class CreateProductRequest implements BaseRequest {
     }
 
     /**
-     * Product name (Compulsory)
+     * Product name (Optional)
      *
      * @param prod_name
      */
@@ -67,19 +84,19 @@ public class CreateProductRequest implements BaseRequest {
     }
 
     /**
-     * Product name (Compulsory)
+     * Product name (Optional)
      *
      * @param prod_name
      * @return
      */
-    public CreateProductRequest withProductName(String prod_name) {
+    public UpdateProductRequest withProductName(String prod_name) {
         this.prod_name = prod_name;
 
         return this;
     }
 
     /**
-     * Product recommended sale price (Compulsory)
+     * Product recommended sale price (Optional)
      *
      * @return
      */
@@ -91,14 +108,14 @@ public class CreateProductRequest implements BaseRequest {
         this.prod_rrp = prod_rrp;
     }
 
-    public CreateProductRequest withRecommendedSalePrice(String prod_rrp) {
+    public UpdateProductRequest withRecommendedSalePrice(String prod_rrp) {
         this.prod_rrp = prod_rrp;
 
         return this;
     }
 
     /**
-     * Product quantity (Compulsory)
+     * Product quantity (Optional)
      *
      * @return
      */
@@ -107,7 +124,7 @@ public class CreateProductRequest implements BaseRequest {
     }
 
     /**
-     * Product quantity (Compulsory)
+     * Product quantity (Optional)
      *
      * @param prod_quantity
      */
@@ -116,19 +133,19 @@ public class CreateProductRequest implements BaseRequest {
     }
 
     /**
-     * Product quantity (Compulsory)
+     * Product quantity (Optional)
      *
      * @param prod_quantity
      * @return
      */
-    public CreateProductRequest withQuantity(String prod_quantity) {
+    public UpdateProductRequest withQuantity(String prod_quantity) {
         this.prod_quantity = prod_quantity;
 
         return this;
     }
 
     /**
-     * Product sale price in New Zealand Dollars (Compulsory)
+     * Product sale price in New Zealand Dollars (Optional)
      *
      * @return
      */
@@ -137,7 +154,7 @@ public class CreateProductRequest implements BaseRequest {
     }
 
     /**
-     * Product sale price in New Zealand Dollars (Compulsory)
+     * Product sale price in New Zealand Dollars (Optional)
      *
      * @param prod_sale_price
      */
@@ -146,12 +163,12 @@ public class CreateProductRequest implements BaseRequest {
     }
 
     /**
-     * Product sale price in New Zealand Dollars (Compulsory)
+     * Product sale price in New Zealand Dollars (Optional)
      *
      * @param prod_sale_price
      * @return
      */
-    public CreateProductRequest withSalePrice(String prod_sale_price) {
+    public UpdateProductRequest withSalePrice(String prod_sale_price) {
         this.prod_sale_price = prod_sale_price;
 
         return this;
@@ -159,7 +176,7 @@ public class CreateProductRequest implements BaseRequest {
 
     /**
      * The minimum number of products that need to be purchased to get it at
-     * this price. The default number usually chosen will be one. (Compulsory)
+     * this price. The default number usually chosen will be one. (Optional)
      *
      * @return
      */
@@ -169,7 +186,7 @@ public class CreateProductRequest implements BaseRequest {
 
     /**
      * The minimum number of products that need to be purchased to get it at
-     * this price. The default number usually chosen will be one. (Compulsory)
+     * this price. The default number usually chosen will be one. (Optional)
      *
      * @param prod_minimum_purchase
      */
@@ -179,12 +196,12 @@ public class CreateProductRequest implements BaseRequest {
 
     /**
      * The minimum number of products that need to be purchased to get it at
-     * this price. The default number usually chosen will be one. (Compulsory)
+     * this price. The default number usually chosen will be one. (Optional)
      *
      * @param prod_minimum_purchase
      * @return
      */
-    public CreateProductRequest withMinimumPurchase(String prod_minimum_purchase) {
+    public UpdateProductRequest withMinimumPurchase(String prod_minimum_purchase) {
         this.prod_minimum_purchase = prod_minimum_purchase;
 
         return this;
@@ -214,7 +231,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_description
      * @return
      */
-    public CreateProductRequest withDescription(String prod_description) {
+    public UpdateProductRequest withDescription(String prod_description) {
         this.prod_description = prod_description;
 
         return this;
@@ -244,7 +261,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_aud
      * @return
      */
-    public CreateProductRequest withSalePriceAUD(String prod_sale_price_aud) {
+    public UpdateProductRequest withSalePriceAUD(String prod_sale_price_aud) {
         this.prod_sale_price_aud = prod_sale_price_aud;
 
         return this;
@@ -274,7 +291,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_cad
      * @return
      */
-    public CreateProductRequest withSalePriceCAD(String prod_sale_price_cad) {
+    public UpdateProductRequest withSalePriceCAD(String prod_sale_price_cad) {
         this.prod_sale_price_cad = prod_sale_price_cad;
 
         return this;
@@ -304,7 +321,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_cny
      * @return
      */
-    public CreateProductRequest withSalePriceCNY(String prod_sale_price_cny) {
+    public UpdateProductRequest withSalePriceCNY(String prod_sale_price_cny) {
         this.prod_sale_price_cny = prod_sale_price_cny;
 
         return this;
@@ -334,7 +351,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_eur
      * @return
      */
-    public CreateProductRequest withSalePriceEUR(String prod_sale_price_eur) {
+    public UpdateProductRequest withSalePriceEUR(String prod_sale_price_eur) {
         this.prod_sale_price_eur = prod_sale_price_eur;
 
         return this;
@@ -364,7 +381,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_gbp
      * @return
      */
-    public CreateProductRequest withSalePriceGBP(String prod_sale_price_gbp) {
+    public UpdateProductRequest withSalePriceGBP(String prod_sale_price_gbp) {
         this.prod_sale_price_gbp = prod_sale_price_gbp;
 
         return this;
@@ -394,7 +411,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_hkd
      * @return
      */
-    public CreateProductRequest withSalePriceHKD(String prod_sale_price_hkd) {
+    public UpdateProductRequest withSalePriceHKD(String prod_sale_price_hkd) {
         this.prod_sale_price_hkd = prod_sale_price_hkd;
 
         return this;
@@ -424,7 +441,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_jpy
      * @return
      */
-    public CreateProductRequest withSalePriceJPY(String prod_sale_price_jpy) {
+    public UpdateProductRequest withSalePriceJPY(String prod_sale_price_jpy) {
         this.prod_sale_price_jpy = prod_sale_price_jpy;
 
         return this;
@@ -454,7 +471,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_sgd
      * @return
      */
-    public CreateProductRequest withSalePriceSGD(String prod_sale_price_sgd) {
+    public UpdateProductRequest withSalePriceSGD(String prod_sale_price_sgd) {
         this.prod_sale_price_sgd = prod_sale_price_sgd;
 
         return this;
@@ -484,7 +501,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_zar
      * @return
      */
-    public CreateProductRequest withSalePriceZAR(String prod_sale_price_zar) {
+    public UpdateProductRequest withSalePriceZAR(String prod_sale_price_zar) {
         this.prod_sale_price_zar = prod_sale_price_zar;
 
         return this;
@@ -514,7 +531,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_krw
      * @return
      */
-    public CreateProductRequest withSalePriceKRW(String prod_sale_price_krw) {
+    public UpdateProductRequest withSalePriceKRW(String prod_sale_price_krw) {
         this.prod_sale_price_krw = prod_sale_price_krw;
 
         return this;
@@ -544,7 +561,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_usd
      * @return
      */
-    public CreateProductRequest withSalePriceUSD(String prod_sale_price_usd) {
+    public UpdateProductRequest withSalePriceUSD(String prod_sale_price_usd) {
         this.prod_sale_price_usd = prod_sale_price_usd;
 
         return this;
@@ -577,7 +594,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_accepted_url
      * @return
      */
-    public CreateProductRequest withAcceptedUrl(String prod_accepted_url) {
+    public UpdateProductRequest withAcceptedUrl(String prod_accepted_url) {
         this.prod_accepted_url = prod_accepted_url;
 
         return this;
@@ -610,7 +627,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_declined_url
      * @return
      */
-    public CreateProductRequest withDeclinedUrl(String prod_declined_url) {
+    public UpdateProductRequest withDeclinedUrl(String prod_declined_url) {
         this.prod_declined_url = prod_declined_url;
 
         return this;
@@ -620,6 +637,7 @@ public class CreateProductRequest implements BaseRequest {
     public Map<String, String> toParams() {
         Map<String, String> params = new LinkedHashMap();
 
+        BaseRequest.addIfhasValue("product_id", product_id, params);
         BaseRequest.addIfhasValue("prod_name", prod_name, params);
         BaseRequest.addIfhasValue("prod_rrp", prod_rrp, params);
         BaseRequest.addIfhasValue("prod_quantity", prod_quantity, params);
@@ -645,7 +663,7 @@ public class CreateProductRequest implements BaseRequest {
 
     @Override
     public String url() {
-        return "https://api.swipehq.com/createProduct.php";
+        return "https://api.swipehq.com/updateProduct.php";
     }
 
 }

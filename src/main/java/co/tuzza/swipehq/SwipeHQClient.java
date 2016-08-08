@@ -22,6 +22,8 @@ import co.tuzza.swipehq.models.products.CreateProductRequest;
 import co.tuzza.swipehq.models.products.CreateProductResponse;
 import co.tuzza.swipehq.models.products.FetchProductsRequest;
 import co.tuzza.swipehq.models.products.FetchProductsResponse;
+import co.tuzza.swipehq.models.products.UpdateProductRequest;
+import co.tuzza.swipehq.models.products.UpdateProductResponse;
 import co.tuzza.swipehq.models.subscription.CreateSubscriptionRequest;
 import co.tuzza.swipehq.models.subscription.CreateSubscriptionResponse;
 import co.tuzza.swipehq.models.transaction.CreateTransactionRequest;
@@ -149,6 +151,20 @@ public class SwipeHQClient {
     public CreateProductResponse createProduct(CreateProductRequest createProductRequest)
             throws Exception {
         return doRequest(createProductRequest, CreateProductResponse.class, "POST");
+    }
+
+    /**
+     * The UpdateProduct API allows the calling server to update products
+     * without the need of going into the merchant console. From here the server
+     * may then fetch the new records if required.
+     *
+     * @param updateProductRequest
+     * @return
+     * @throws Exception
+     */
+    public UpdateProductResponse updateProduct(UpdateProductRequest updateProductRequest)
+            throws Exception {
+        return doRequest(updateProductRequest, UpdateProductResponse.class, "POST");
     }
 
     private <T> T doRequest(BaseRequest request, Class<T> responseClass, String type) throws Exception {
