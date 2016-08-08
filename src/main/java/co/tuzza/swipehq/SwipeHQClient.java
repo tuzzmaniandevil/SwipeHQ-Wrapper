@@ -18,6 +18,10 @@ package co.tuzza.swipehq;
 import co.tuzza.swipehq.models.BaseRequest;
 import co.tuzza.swipehq.models.cart.CreateCartRequest;
 import co.tuzza.swipehq.models.cart.CreateCartResponse;
+import co.tuzza.swipehq.models.products.CreateProductRequest;
+import co.tuzza.swipehq.models.products.CreateProductResponse;
+import co.tuzza.swipehq.models.products.FetchProductsRequest;
+import co.tuzza.swipehq.models.products.FetchProductsResponse;
 import co.tuzza.swipehq.models.subscription.CreateSubscriptionRequest;
 import co.tuzza.swipehq.models.subscription.CreateSubscriptionResponse;
 import co.tuzza.swipehq.models.transaction.CreateTransactionRequest;
@@ -119,6 +123,32 @@ public class SwipeHQClient {
     public CreateCartResponse createCart(CreateCartRequest createCartRequest)
             throws Exception {
         return doRequest(createCartRequest, CreateCartResponse.class, "POST");
+    }
+
+    /**
+     * The fetchProducts API returns products from your merchant account.
+     *
+     * @param fetchProductsRequest
+     * @return
+     * @throws Exception
+     */
+    public FetchProductsResponse fetchProducts(FetchProductsRequest fetchProductsRequest)
+            throws Exception {
+        return doRequest(fetchProductsRequest, FetchProductsResponse.class, "GET");
+    }
+
+    /**
+     * The CreateProducts API is used to make new products to be avaliable for
+     * customers to purchase. After a product has been made it may then be used
+     * with the payments page, where the the Product ID is required.
+     *
+     * @param createProductRequest
+     * @return
+     * @throws Exception
+     */
+    public CreateProductResponse createProduct(CreateProductRequest createProductRequest)
+            throws Exception {
+        return doRequest(createProductRequest, CreateProductResponse.class, "POST");
     }
 
     private <T> T doRequest(BaseRequest request, Class<T> responseClass, String type) throws Exception {
