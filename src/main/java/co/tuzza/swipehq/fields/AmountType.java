@@ -13,12 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package co.tuzza.swipehq.models;
+package co.tuzza.swipehq.fields;
 
 /**
  *
  * @author Wesley <wesley@tuzza.co>
  */
-public class CreateSubscriptionResponse extends BaseResponse<AbstractCreateSubscriptionResponse> {
+public enum AmountType {
 
+    Fixed("fixed"),
+    Percent("percent");
+
+    private final String name;
+
+    private AmountType(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public static AmountType findByName(String n) {
+        for (AmountType v : AmountType.values()) {
+            if (v.name.equalsIgnoreCase(n)) {
+                return v;
+            }
+        }
+
+        return null;
+    }
 }

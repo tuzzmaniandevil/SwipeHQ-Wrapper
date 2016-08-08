@@ -16,12 +16,14 @@
 package co.tuzza.swipehq;
 
 import co.tuzza.swipehq.models.BaseRequest;
-import co.tuzza.swipehq.models.CreateSubscriptionRequest;
-import co.tuzza.swipehq.models.CreateSubscriptionResponse;
-import co.tuzza.swipehq.models.CreateTransactionRequest;
-import co.tuzza.swipehq.models.CreateTransactionResponse;
-import co.tuzza.swipehq.models.VerifyTransactionRequest;
-import co.tuzza.swipehq.models.VerifyTransactionResponse;
+import co.tuzza.swipehq.models.cart.CreateCartRequest;
+import co.tuzza.swipehq.models.cart.CreateCartResponse;
+import co.tuzza.swipehq.models.subscription.CreateSubscriptionRequest;
+import co.tuzza.swipehq.models.subscription.CreateSubscriptionResponse;
+import co.tuzza.swipehq.models.transaction.CreateTransactionRequest;
+import co.tuzza.swipehq.models.transaction.CreateTransactionResponse;
+import co.tuzza.swipehq.models.verifyTransaction.VerifyTransactionRequest;
+import co.tuzza.swipehq.models.verifyTransaction.VerifyTransactionResponse;
 import co.tuzza.swipehq.transport.AsyncHttpTransport;
 import co.tuzza.swipehq.transport.HttpTransport;
 import java.util.LinkedHashMap;
@@ -103,6 +105,20 @@ public class SwipeHQClient {
     public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest)
             throws Exception {
         return doRequest(createSubscriptionRequest, CreateSubscriptionResponse.class, "POST");
+    }
+
+    /**
+     * This API is used to create a transaction with multiple products which set
+     * up in merchant console, where you pass in the product IDs to create a
+     * cart transaction.
+     *
+     * @param createCartRequest
+     * @return
+     * @throws Exception
+     */
+    public CreateCartResponse createCart(CreateCartRequest createCartRequest)
+            throws Exception {
+        return doRequest(createCartRequest, CreateCartResponse.class, "POST");
     }
 
     private <T> T doRequest(BaseRequest request, Class<T> responseClass, String type) throws Exception {

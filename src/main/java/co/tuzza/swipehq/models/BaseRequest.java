@@ -15,6 +15,9 @@
  */
 package co.tuzza.swipehq.models;
 
+import co.tuzza.swipehq.fields.AmountType;
+import co.tuzza.swipehq.fields.Country;
+import co.tuzza.swipehq.fields.Currency;
 import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 
@@ -27,6 +30,24 @@ public interface BaseRequest {
     public static void addIfhasValue(String key, String value, Map<String, String> params) {
         if (StringUtils.isNotBlank(value)) {
             params.put(key, value);
+        }
+    }
+
+    public static void addIfhasValue(String key, Currency value, Map<String, String> params) {
+        if (value != null) {
+            params.put(key, value.getSymbol());
+        }
+    }
+
+    public static void addIfhasValue(String key, Country value, Map<String, String> params) {
+        if (value != null) {
+            params.put(key, value.getName());
+        }
+    }
+
+    public static void addIfhasValue(String key, AmountType value, Map<String, String> params) {
+        if (value != null) {
+            params.put(key, value.getName());
         }
     }
 

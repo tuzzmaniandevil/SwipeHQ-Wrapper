@@ -13,27 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package co.tuzza.swipehq.models;
+package co.tuzza.swipehq.models.transaction;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import co.tuzza.swipehq.models.BaseResponse;
+import co.tuzza.swipehq.models.IdentifierResponse;
 
 /**
  *
  * @author Wesley <wesley@tuzza.co>
  */
-public class AbstractTransactionResponse {
+public class CreateTransactionResponse extends BaseResponse<IdentifierResponse> {
 
-    @JsonProperty(value = "identifier", required = false)
-    private String identifier;
-
-    /**
-     * The 'identifier' is the ID of the transaction identifier now setup in the
-     * Swipe Checkout system. When this ID is passed to the Payments page via
-     * the 'identifier_id' parameter, the item details will be displayed.
-     *
-     * @return
-     */
-    public String getIdentifier() {
-        return identifier;
-    }
 }

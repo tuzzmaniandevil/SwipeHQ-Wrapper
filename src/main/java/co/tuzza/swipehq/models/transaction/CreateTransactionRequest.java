@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package co.tuzza.swipehq.models;
+package co.tuzza.swipehq.models.transaction;
 
 import co.tuzza.swipehq.fields.Country;
 import co.tuzza.swipehq.fields.Currency;
+import co.tuzza.swipehq.models.BaseRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,14 +44,14 @@ public class CreateTransactionRequest implements BaseRequest {
     private String td_duration;
     private String td_default_quantity;
     private String td_user_data;
-    private String td_currency;
+    private Currency td_currency;
     private String td_token;
     private String td_callback_url;
     private String td_lpn_url;
     private String td_email;
     private String td_first_name;
     private String td_last_name;
-    private String td_country;
+    private Country td_country;
     private String td_state;
     private String td_city;
     private String td_company;
@@ -190,7 +191,7 @@ public class CreateTransactionRequest implements BaseRequest {
         return this;
     }
 
-    public String getCurrency() {
+    public Currency getCurrency() {
         return td_currency;
     }
 
@@ -202,7 +203,7 @@ public class CreateTransactionRequest implements BaseRequest {
      * @param td_currency
      */
     public void setCurrency(String td_currency) {
-        this.td_currency = td_currency;
+        this.td_currency = Currency.findByAny(td_currency);
     }
 
     /**
@@ -212,11 +213,7 @@ public class CreateTransactionRequest implements BaseRequest {
      * @param currency
      */
     public void setCurrency(Currency currency) {
-        if (currency != null) {
-            this.td_currency = currency.getSymbol();
-        } else {
-            this.td_currency = null;
-        }
+        this.td_currency = currency;
     }
 
     /**
@@ -228,7 +225,7 @@ public class CreateTransactionRequest implements BaseRequest {
      * @return
      */
     public CreateTransactionRequest withCurrency(String td_currency) {
-        this.td_currency = td_currency;
+        this.setCurrency(td_currency);
 
         return this;
     }
@@ -370,7 +367,7 @@ public class CreateTransactionRequest implements BaseRequest {
         return this;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return td_country;
     }
 
@@ -381,7 +378,7 @@ public class CreateTransactionRequest implements BaseRequest {
      * @param td_country
      */
     public void setCountry(String td_country) {
-        this.td_country = td_country;
+        this.td_country = Country.valueOf(td_country);
     }
 
     /**
@@ -391,11 +388,7 @@ public class CreateTransactionRequest implements BaseRequest {
      * @param country
      */
     public void setCountry(Country country) {
-        if (country != null) {
-            this.td_country = country.getName();
-        } else {
-            this.td_country = null;
-        }
+        this.td_country = country;
     }
 
     /**
@@ -406,7 +399,7 @@ public class CreateTransactionRequest implements BaseRequest {
      * @return
      */
     public CreateTransactionRequest withCountry(String td_country) {
-        this.td_country = td_country;
+        this.setCountry(td_country);
 
         return this;
     }

@@ -21,16 +21,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @author Wesley <wesley@tuzza.co>
  */
-public class AbstractCreateSubscriptionResponse {
+public class IdentifierResponse {
 
     @JsonProperty(value = "identifier", required = false)
     private String identifier;
 
     /**
-     * The 'identifier' is the ID of the subscription identifier now setup in
-     * the Swipe Checkout system. When this ID is passed to the Subscriptions
-     * page via the 'identifier_id' parameter, the subscription details will be
-     * displayed.
+     * The 'identifier' is the ID of the transaction identifier now setup in the
+     * Swipe Checkout system. When this ID is passed to the Payments page via
+     * the 'identifier_id' parameter, the item details will be displayed.
      *
      * @return
      */

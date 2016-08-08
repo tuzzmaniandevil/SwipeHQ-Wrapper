@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package co.tuzza.swipehq.models;
+package co.tuzza.swipehq.models.verifyTransaction;
 
+import co.tuzza.swipehq.models.BaseRequest;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

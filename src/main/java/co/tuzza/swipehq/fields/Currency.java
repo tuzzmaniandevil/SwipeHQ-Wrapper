@@ -15,8 +15,6 @@
  */
 package co.tuzza.swipehq.fields;
 
-import org.apache.commons.lang.StringUtils;
-
 /**
  * These are the current currencies that the SwipeHQ system supports.
  *
@@ -31,6 +29,7 @@ public enum Currency {
     ChineseYuan("Chinese yuan", "CNY"),
     CanadianDollars("Canadian dollars", "CAD"),
     AustralianDollars("Australian dollars", "AUD"),
+    NewZealandDollars("New Zealand dollars", "NZD"),
     UnitedStatesDollars("United States dollars", "USD"),
     SingaporeanDollars("Singaporean dollars", "SGD"),
     GreatBritishPounds("Great British pounds", "GBP"),
@@ -53,10 +52,6 @@ public enum Currency {
     }
 
     public static Currency findByName(String n) {
-        if (StringUtils.isBlank(n)) {
-            return null;
-        }
-
         for (Currency v : Currency.values()) {
             if (v.name.equalsIgnoreCase(n)) {
                 return v;
@@ -67,10 +62,6 @@ public enum Currency {
     }
 
     public static Currency findBySymbol(String n) {
-        if (StringUtils.isBlank(n)) {
-            return null;
-        }
-
         for (Currency v : Currency.values()) {
             if (v.symbol.equalsIgnoreCase(n)) {
                 return v;
@@ -78,6 +69,16 @@ public enum Currency {
         }
 
         return null;
+    }
+
+    public static Currency findByAny(String n) {
+        Currency c = findByName(n);
+
+        if (c == null) {
+            c = findBySymbol(n);
+        }
+
+        return c;
     }
 
     @Override

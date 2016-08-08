@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package co.tuzza.swipehq.models;
+package co.tuzza.swipehq.models.subscription;
 
 import co.tuzza.swipehq.fields.Country;
+import co.tuzza.swipehq.models.BaseRequest;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -45,7 +46,7 @@ public class CreateSubscriptionRequest implements BaseRequest {
     private String td_suburb;
     private String td_city;
     private String td_state;
-    private String td_country;
+    private Country td_country;
     private String td_phone;
     private String td_mobile;
     private String td_dob;
@@ -306,7 +307,7 @@ public class CreateSubscriptionRequest implements BaseRequest {
         return this;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return td_country;
     }
 
@@ -316,7 +317,7 @@ public class CreateSubscriptionRequest implements BaseRequest {
      * @param td_country
      */
     public void setCountry(String td_country) {
-        this.td_country = td_country;
+        this.td_country = Country.valueOf(td_country);
     }
 
     /**
@@ -325,11 +326,7 @@ public class CreateSubscriptionRequest implements BaseRequest {
      * @param country
      */
     public void setCountry(Country country) {
-        if (country != null) {
-            this.td_country = country.getName();
-        } else {
-            this.td_country = null;
-        }
+        this.td_country = country;
     }
 
     /**
@@ -339,7 +336,7 @@ public class CreateSubscriptionRequest implements BaseRequest {
      * @return
      */
     public CreateSubscriptionRequest withCountry(String td_country) {
-        this.td_country = td_country;
+        this.setCountry(td_country);
 
         return this;
     }

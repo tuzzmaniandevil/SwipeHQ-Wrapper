@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package co.tuzza.swipehq.models;
+package co.tuzza.swipehq.models.subscription;
+
+import co.tuzza.swipehq.models.BaseResponse;
+import co.tuzza.swipehq.models.IdentifierResponse;
 
 /**
  *
  * @author Wesley <wesley@tuzza.co>
  */
-public class CreateTransactionResponse extends BaseResponse<AbstractTransactionResponse> {
+public class CreateSubscriptionResponse extends BaseResponse<IdentifierResponse> {
 
 }
