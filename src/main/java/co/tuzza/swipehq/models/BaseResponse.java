@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public abstract class BaseResponse<T> {
 
     @JsonProperty("response_code")
-    private String responseCode;
+    private Integer responseCode;
 
     @JsonProperty("message")
     private String message;
@@ -38,7 +38,7 @@ public abstract class BaseResponse<T> {
      *
      * @return
      */
-    public String getResponseCode() {
+    public Integer getResponseCode() {
         return responseCode;
     }
 

@@ -17,6 +17,7 @@ package co.tuzza.swipehq.models.transaction;
 
 import co.tuzza.swipehq.models.BaseResponse;
 import co.tuzza.swipehq.models.IdentifierResponse;
+import org.apache.commons.lang.StringUtils;
 
 /**
  *
@@ -24,4 +25,16 @@ import co.tuzza.swipehq.models.IdentifierResponse;
  */
 public class CreateTransactionResponse extends BaseResponse<IdentifierResponse> {
 
+    /**
+     * Returns the payment URL if an identifier is preset. e.g.
+     * https://payment.swipehq.com/?identifier_id=XXXX
+     *
+     * @return
+     */
+    public String getPaymentUrl() {
+        if (getData() != null && StringUtils.isNotBlank(getData().getIdentifier())) {
+            return "https://payment.swipehq.com/?identifier_id=" + getData().getIdentifier();
+        }
+        return null;
+    }
 }
