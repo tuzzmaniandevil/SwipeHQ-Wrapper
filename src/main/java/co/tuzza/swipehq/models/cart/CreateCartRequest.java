@@ -19,6 +19,7 @@ import co.tuzza.swipehq.fields.AmountType;
 import co.tuzza.swipehq.fields.Country;
 import co.tuzza.swipehq.fields.Currency;
 import co.tuzza.swipehq.models.BaseRequest;
+import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -38,9 +39,9 @@ public class CreateCartRequest implements BaseRequest {
 
     private String crt_product_data;
     private Currency crt_currency;
-    private String crt_discount;
+    private BigDecimal crt_discount;
     private AmountType crt_discount_type;
-    private String crt_tip;
+    private BigDecimal crt_tip;
     private AmountType crt_tip_type;
     private String td_user_data;
     private String td_token;
@@ -156,7 +157,7 @@ public class CreateCartRequest implements BaseRequest {
      *
      * @return
      */
-    public String getDiscount() {
+    public BigDecimal getDiscount() {
         return crt_discount;
     }
 
@@ -167,7 +168,7 @@ public class CreateCartRequest implements BaseRequest {
      *
      * @param crt_discount
      */
-    public void setDiscount(String crt_discount) {
+    public void setDiscount(BigDecimal crt_discount) {
         this.crt_discount = crt_discount;
     }
 
@@ -179,7 +180,7 @@ public class CreateCartRequest implements BaseRequest {
      * @param crt_discount
      * @return
      */
-    public CreateCartRequest withDiscount(String crt_discount) {
+    public CreateCartRequest withDiscount(BigDecimal crt_discount) {
         this.crt_discount = crt_discount;
 
         return this;
@@ -248,7 +249,7 @@ public class CreateCartRequest implements BaseRequest {
      *
      * @return
      */
-    public String getTip() {
+    public BigDecimal getTip() {
         return crt_tip;
     }
 
@@ -259,7 +260,7 @@ public class CreateCartRequest implements BaseRequest {
      *
      * @param crt_tip
      */
-    public void setTip(String crt_tip) {
+    public void setTip(BigDecimal crt_tip) {
         this.crt_tip = crt_tip;
     }
 
@@ -271,7 +272,7 @@ public class CreateCartRequest implements BaseRequest {
      * @param crt_tip
      * @return
      */
-    public CreateCartRequest withTip(String crt_tip) {
+    public CreateCartRequest withTip(BigDecimal crt_tip) {
         this.crt_tip = crt_tip;
 
         return this;

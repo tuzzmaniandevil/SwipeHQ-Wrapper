@@ -16,6 +16,7 @@
 package co.tuzza.swipehq.models.products;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 
 /**
  *
@@ -63,16 +64,16 @@ public class Product {
     private String prod_mcid;
 
     @JsonProperty(value = "prod_minimum_purchase", required = false)
-    private String prod_minimum_purchase;
+    private Long prod_minimum_purchase;
 
     @JsonProperty(value = "prod_name", required = false)
     private String prod_name;
 
     @JsonProperty(value = "prod_rrp", required = false)
-    private String prod_rrp;
+    private BigDecimal prod_rrp;
 
     @JsonProperty(value = "prod_sale_price", required = false)
-    private String prod_sale_price;
+    private BigDecimal prod_sale_price;
 
     @JsonProperty(value = "prod_shipping", required = false)
     private String prod_shipping;
@@ -81,7 +82,7 @@ public class Product {
     private String prod_status;
 
     @JsonProperty(value = "prod_stock", required = false)
-    private String prod_stock;
+    private Long prod_stock;
 
     @JsonProperty(value = "prod_stock_enabled", required = false)
     private String prod_stock_enabled;

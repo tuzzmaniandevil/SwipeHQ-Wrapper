@@ -18,6 +18,7 @@ package co.tuzza.swipehq.models;
 import co.tuzza.swipehq.fields.AmountType;
 import co.tuzza.swipehq.fields.Country;
 import co.tuzza.swipehq.fields.Currency;
+import java.math.BigDecimal;
 import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 
@@ -48,6 +49,18 @@ public interface BaseRequest {
     public static void addIfhasValue(String key, AmountType value, Map<String, String> params) {
         if (value != null) {
             params.put(key, value.getName());
+        }
+    }
+
+    public static void addIfhasValue(String key, BigDecimal value, Map<String, String> params) {
+        if (value != null) {
+            params.put(key, value.toString());
+        }
+    }
+
+    public static void addIfhasValue(String key, Long value, Map<String, String> params) {
+        if (value != null) {
+            params.put(key, value.toString());
         }
     }
 

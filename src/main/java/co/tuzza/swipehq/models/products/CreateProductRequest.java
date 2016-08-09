@@ -16,6 +16,7 @@
 package co.tuzza.swipehq.models.products;
 
 import co.tuzza.swipehq.models.BaseRequest;
+import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -29,22 +30,22 @@ import java.util.Map;
 public class CreateProductRequest implements BaseRequest {
 
     private String prod_name;
-    private String prod_rrp;
-    private String prod_quantity;
-    private String prod_sale_price;
+    private BigDecimal prod_rrp;
+    private Long prod_quantity;
+    private BigDecimal prod_sale_price;
     private String prod_description;
-    private String prod_minimum_purchase;
-    private String prod_sale_price_aud;
-    private String prod_sale_price_cad;
-    private String prod_sale_price_cny;
-    private String prod_sale_price_eur;
-    private String prod_sale_price_gbp;
-    private String prod_sale_price_hkd;
-    private String prod_sale_price_jpy;
-    private String prod_sale_price_sgd;
-    private String prod_sale_price_zar;
-    private String prod_sale_price_krw;
-    private String prod_sale_price_usd;
+    private Long prod_minimum_purchase;
+    private BigDecimal prod_sale_price_aud;
+    private BigDecimal prod_sale_price_cad;
+    private BigDecimal prod_sale_price_cny;
+    private BigDecimal prod_sale_price_eur;
+    private BigDecimal prod_sale_price_gbp;
+    private BigDecimal prod_sale_price_hkd;
+    private BigDecimal prod_sale_price_jpy;
+    private BigDecimal prod_sale_price_sgd;
+    private BigDecimal prod_sale_price_zar;
+    private BigDecimal prod_sale_price_krw;
+    private BigDecimal prod_sale_price_usd;
     private String prod_accepted_url;
     private String prod_declined_url;
 
@@ -83,15 +84,15 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getRecommendedSalePrice() {
+    public BigDecimal getRecommendedSalePrice() {
         return prod_rrp;
     }
 
-    public void setRecommendedSalePrice(String prod_rrp) {
+    public void setRecommendedSalePrice(BigDecimal prod_rrp) {
         this.prod_rrp = prod_rrp;
     }
 
-    public CreateProductRequest withRecommendedSalePrice(String prod_rrp) {
+    public CreateProductRequest withRecommendedSalePrice(BigDecimal prod_rrp) {
         this.prod_rrp = prod_rrp;
 
         return this;
@@ -102,7 +103,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getQuantity() {
+    public Long getQuantity() {
         return prod_quantity;
     }
 
@@ -111,7 +112,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_quantity
      */
-    public void setQuantity(String prod_quantity) {
+    public void setQuantity(Long prod_quantity) {
         this.prod_quantity = prod_quantity;
     }
 
@@ -121,7 +122,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_quantity
      * @return
      */
-    public CreateProductRequest withQuantity(String prod_quantity) {
+    public CreateProductRequest withQuantity(Long prod_quantity) {
         this.prod_quantity = prod_quantity;
 
         return this;
@@ -132,7 +133,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePrice() {
+    public BigDecimal getSalePrice() {
         return prod_sale_price;
     }
 
@@ -141,7 +142,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price
      */
-    public void setSalePrice(String prod_sale_price) {
+    public void setSalePrice(BigDecimal prod_sale_price) {
         this.prod_sale_price = prod_sale_price;
     }
 
@@ -151,7 +152,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price
      * @return
      */
-    public CreateProductRequest withSalePrice(String prod_sale_price) {
+    public CreateProductRequest withSalePrice(BigDecimal prod_sale_price) {
         this.prod_sale_price = prod_sale_price;
 
         return this;
@@ -163,7 +164,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getMinimumPurchase() {
+    public Long getMinimumPurchase() {
         return prod_minimum_purchase;
     }
 
@@ -173,7 +174,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_minimum_purchase
      */
-    public void setMinimumPurchase(String prod_minimum_purchase) {
+    public void setMinimumPurchase(Long prod_minimum_purchase) {
         this.prod_minimum_purchase = prod_minimum_purchase;
     }
 
@@ -184,7 +185,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_minimum_purchase
      * @return
      */
-    public CreateProductRequest withMinimumPurchase(String prod_minimum_purchase) {
+    public CreateProductRequest withMinimumPurchase(Long prod_minimum_purchase) {
         this.prod_minimum_purchase = prod_minimum_purchase;
 
         return this;
@@ -225,7 +226,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceAUD() {
+    public BigDecimal getSalePriceAUD() {
         return prod_sale_price_aud;
     }
 
@@ -234,7 +235,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_aud
      */
-    public void setSalePriceAUD(String prod_sale_price_aud) {
+    public void setSalePriceAUD(BigDecimal prod_sale_price_aud) {
         this.prod_sale_price_aud = prod_sale_price_aud;
     }
 
@@ -244,7 +245,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_aud
      * @return
      */
-    public CreateProductRequest withSalePriceAUD(String prod_sale_price_aud) {
+    public CreateProductRequest withSalePriceAUD(BigDecimal prod_sale_price_aud) {
         this.prod_sale_price_aud = prod_sale_price_aud;
 
         return this;
@@ -255,7 +256,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceCAD() {
+    public BigDecimal getSalePriceCAD() {
         return prod_sale_price_cad;
     }
 
@@ -264,7 +265,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_cad
      */
-    public void setSalePriceCAD(String prod_sale_price_cad) {
+    public void setSalePriceCAD(BigDecimal prod_sale_price_cad) {
         this.prod_sale_price_cad = prod_sale_price_cad;
     }
 
@@ -274,7 +275,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_cad
      * @return
      */
-    public CreateProductRequest withSalePriceCAD(String prod_sale_price_cad) {
+    public CreateProductRequest withSalePriceCAD(BigDecimal prod_sale_price_cad) {
         this.prod_sale_price_cad = prod_sale_price_cad;
 
         return this;
@@ -285,7 +286,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceCNY() {
+    public BigDecimal getSalePriceCNY() {
         return prod_sale_price_cny;
     }
 
@@ -294,7 +295,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_cny
      */
-    public void setSalePriceCNY(String prod_sale_price_cny) {
+    public void setSalePriceCNY(BigDecimal prod_sale_price_cny) {
         this.prod_sale_price_cny = prod_sale_price_cny;
     }
 
@@ -304,7 +305,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_cny
      * @return
      */
-    public CreateProductRequest withSalePriceCNY(String prod_sale_price_cny) {
+    public CreateProductRequest withSalePriceCNY(BigDecimal prod_sale_price_cny) {
         this.prod_sale_price_cny = prod_sale_price_cny;
 
         return this;
@@ -315,7 +316,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceEUR() {
+    public BigDecimal getSalePriceEUR() {
         return prod_sale_price_eur;
     }
 
@@ -324,7 +325,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_eur
      */
-    public void setSalePriceEUR(String prod_sale_price_eur) {
+    public void setSalePriceEUR(BigDecimal prod_sale_price_eur) {
         this.prod_sale_price_eur = prod_sale_price_eur;
     }
 
@@ -334,7 +335,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_eur
      * @return
      */
-    public CreateProductRequest withSalePriceEUR(String prod_sale_price_eur) {
+    public CreateProductRequest withSalePriceEUR(BigDecimal prod_sale_price_eur) {
         this.prod_sale_price_eur = prod_sale_price_eur;
 
         return this;
@@ -345,7 +346,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceGBP() {
+    public BigDecimal getSalePriceGBP() {
         return prod_sale_price_gbp;
     }
 
@@ -354,7 +355,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_gbp
      */
-    public void setSalePriceGBP(String prod_sale_price_gbp) {
+    public void setSalePriceGBP(BigDecimal prod_sale_price_gbp) {
         this.prod_sale_price_gbp = prod_sale_price_gbp;
     }
 
@@ -364,7 +365,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_gbp
      * @return
      */
-    public CreateProductRequest withSalePriceGBP(String prod_sale_price_gbp) {
+    public CreateProductRequest withSalePriceGBP(BigDecimal prod_sale_price_gbp) {
         this.prod_sale_price_gbp = prod_sale_price_gbp;
 
         return this;
@@ -375,7 +376,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceHKD() {
+    public BigDecimal getSalePriceHKD() {
         return prod_sale_price_hkd;
     }
 
@@ -384,7 +385,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_hkd
      */
-    public void setSalePriceHKD(String prod_sale_price_hkd) {
+    public void setSalePriceHKD(BigDecimal prod_sale_price_hkd) {
         this.prod_sale_price_hkd = prod_sale_price_hkd;
     }
 
@@ -394,7 +395,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_hkd
      * @return
      */
-    public CreateProductRequest withSalePriceHKD(String prod_sale_price_hkd) {
+    public CreateProductRequest withSalePriceHKD(BigDecimal prod_sale_price_hkd) {
         this.prod_sale_price_hkd = prod_sale_price_hkd;
 
         return this;
@@ -405,7 +406,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceJPY() {
+    public BigDecimal getSalePriceJPY() {
         return prod_sale_price_jpy;
     }
 
@@ -414,7 +415,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_jpy
      */
-    public void setSalePriceJPY(String prod_sale_price_jpy) {
+    public void setSalePriceJPY(BigDecimal prod_sale_price_jpy) {
         this.prod_sale_price_jpy = prod_sale_price_jpy;
     }
 
@@ -424,7 +425,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_jpy
      * @return
      */
-    public CreateProductRequest withSalePriceJPY(String prod_sale_price_jpy) {
+    public CreateProductRequest withSalePriceJPY(BigDecimal prod_sale_price_jpy) {
         this.prod_sale_price_jpy = prod_sale_price_jpy;
 
         return this;
@@ -435,7 +436,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceSGD() {
+    public BigDecimal getSalePriceSGD() {
         return prod_sale_price_sgd;
     }
 
@@ -444,7 +445,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_sgd
      */
-    public void setSalePriceSGD(String prod_sale_price_sgd) {
+    public void setSalePriceSGD(BigDecimal prod_sale_price_sgd) {
         this.prod_sale_price_sgd = prod_sale_price_sgd;
     }
 
@@ -454,7 +455,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_sgd
      * @return
      */
-    public CreateProductRequest withSalePriceSGD(String prod_sale_price_sgd) {
+    public CreateProductRequest withSalePriceSGD(BigDecimal prod_sale_price_sgd) {
         this.prod_sale_price_sgd = prod_sale_price_sgd;
 
         return this;
@@ -465,7 +466,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceZAR() {
+    public BigDecimal getSalePriceZAR() {
         return prod_sale_price_zar;
     }
 
@@ -474,7 +475,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_zar
      */
-    public void setSalePriceZAR(String prod_sale_price_zar) {
+    public void setSalePriceZAR(BigDecimal prod_sale_price_zar) {
         this.prod_sale_price_zar = prod_sale_price_zar;
     }
 
@@ -484,7 +485,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_zar
      * @return
      */
-    public CreateProductRequest withSalePriceZAR(String prod_sale_price_zar) {
+    public CreateProductRequest withSalePriceZAR(BigDecimal prod_sale_price_zar) {
         this.prod_sale_price_zar = prod_sale_price_zar;
 
         return this;
@@ -495,7 +496,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceKRW() {
+    public BigDecimal getSalePriceKRW() {
         return prod_sale_price_krw;
     }
 
@@ -504,7 +505,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_krw
      */
-    public void setSalePriceKRW(String prod_sale_price_krw) {
+    public void setSalePriceKRW(BigDecimal prod_sale_price_krw) {
         this.prod_sale_price_krw = prod_sale_price_krw;
     }
 
@@ -514,7 +515,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_krw
      * @return
      */
-    public CreateProductRequest withSalePriceKRW(String prod_sale_price_krw) {
+    public CreateProductRequest withSalePriceKRW(BigDecimal prod_sale_price_krw) {
         this.prod_sale_price_krw = prod_sale_price_krw;
 
         return this;
@@ -525,7 +526,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @return
      */
-    public String getSalePriceUSD() {
+    public BigDecimal getSalePriceUSD() {
         return prod_sale_price_usd;
     }
 
@@ -534,7 +535,7 @@ public class CreateProductRequest implements BaseRequest {
      *
      * @param prod_sale_price_usd
      */
-    public void setSalePriceUSD(String prod_sale_price_usd) {
+    public void setSalePriceUSD(BigDecimal prod_sale_price_usd) {
         this.prod_sale_price_usd = prod_sale_price_usd;
     }
 
@@ -544,7 +545,7 @@ public class CreateProductRequest implements BaseRequest {
      * @param prod_sale_price_usd
      * @return
      */
-    public CreateProductRequest withSalePriceUSD(String prod_sale_price_usd) {
+    public CreateProductRequest withSalePriceUSD(BigDecimal prod_sale_price_usd) {
         this.prod_sale_price_usd = prod_sale_price_usd;
 
         return this;
