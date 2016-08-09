@@ -24,8 +24,8 @@ import java.math.BigDecimal;
  */
 public class Product {
 
-    @JsonProperty(value = "prod_accepted_url", required = false)
-    private String prod_accepted_url;
+    @JsonProperty(value = "product_id", required = false)
+    private String product_id;
 
     @JsonProperty(value = "prod_attribute", required = false)
     private String prod_attribute;
@@ -38,6 +38,9 @@ public class Product {
 
     @JsonProperty(value = "prod_category", required = false)
     private String prod_category;
+
+    @JsonProperty(value = "prod_accepted_url", required = false)
+    private String prod_accepted_url;
 
     @JsonProperty(value = "prod_declined_url", required = false)
     private String prod_declined_url;
@@ -90,6 +93,179 @@ public class Product {
     @JsonProperty(value = "prod_tnc", required = false)
     private String prod_tnc;
 
-    @JsonProperty(value = "product_id", required = false)
-    private String product_id;
+    @JsonProperty(value = "prod_sale_price_aud", required = false)
+    private BigDecimal prod_sale_price_aud;
+
+    @JsonProperty(value = "prod_sale_price_cad", required = false)
+    private BigDecimal prod_sale_price_cad;
+
+    @JsonProperty(value = "prod_sale_price_cny", required = false)
+    private BigDecimal prod_sale_price_cny;
+
+    @JsonProperty(value = "prod_sale_price_eur", required = false)
+    private BigDecimal prod_sale_price_eur;
+
+    @JsonProperty(value = "prod_sale_price_gbp", required = false)
+    private BigDecimal prod_sale_price_gbp;
+
+    @JsonProperty(value = "prod_sale_price_hkd", required = false)
+    private BigDecimal prod_sale_price_hkd;
+
+    @JsonProperty(value = "prod_sale_price_jpy", required = false)
+    private BigDecimal prod_sale_price_jpy;
+
+    @JsonProperty(value = "prod_sale_price_krw", required = false)
+    private BigDecimal prod_sale_price_krw;
+
+    @JsonProperty(value = "prod_sale_price_nzd", required = false)
+    private BigDecimal prod_sale_price_nzd;
+
+    @JsonProperty(value = "prod_sale_price_sgd", required = false)
+    private BigDecimal prod_sale_price_sgd;
+
+    @JsonProperty(value = "prod_sale_price_usd", required = false)
+    private BigDecimal prod_sale_price_usd;
+
+    @JsonProperty(value = "prod_sale_price_zar", required = false)
+    private BigDecimal prod_sale_price_zar;
+
+    public String getProductId() {
+        return product_id;
+    }
+
+    public String getAttribute() {
+        return prod_attribute;
+    }
+
+    public String getButtonCode() {
+        return prod_button_code;
+    }
+
+    public String getButtonType() {
+        return prod_button_type;
+    }
+
+    public String getCategory() {
+        return prod_category;
+    }
+
+    public String getAcceptedUrl() {
+        return prod_accepted_url;
+    }
+
+    public String getDeclinedUrl() {
+        return prod_declined_url;
+    }
+
+    public String getDescription() {
+        return prod_description;
+    }
+
+    public String getDetail() {
+        return prod_detail;
+    }
+
+    public String getFeature() {
+        return prod_feature;
+    }
+
+    public String getImage() {
+        return prod_image;
+    }
+
+    public String getKeyword() {
+        return prod_keyword;
+    }
+
+    public String getLastUpdated() {
+        return prod_last_updated;
+    }
+
+    public String getMcid() {
+        return prod_mcid;
+    }
+
+    public Long getMinimumPurchase() {
+        return prod_minimum_purchase;
+    }
+
+    public String getName() {
+        return prod_name;
+    }
+
+    public BigDecimal getRecommendedRetailPrice() {
+        return prod_rrp;
+    }
+
+    public String getShipping() {
+        return prod_shipping;
+    }
+
+    public String getStatus() {
+        return prod_status;
+    }
+
+    public Long getStock() {
+        return prod_stock;
+    }
+
+    public String getStockEnabled() {
+        return prod_stock_enabled;
+    }
+
+    public String getTnc() {
+        return prod_tnc;
+    }
+
+    public BigDecimal getSalePrice() {
+        return prod_sale_price;
+    }
+
+    public BigDecimal getSalePriceAUD() {
+        return prod_sale_price_aud;
+    }
+
+    public BigDecimal getSalePriceCAD() {
+        return prod_sale_price_cad;
+    }
+
+    public BigDecimal getSalePriceCNY() {
+        return prod_sale_price_cny;
+    }
+
+    public BigDecimal getSalePriceEUR() {
+        return prod_sale_price_eur;
+    }
+
+    public BigDecimal getSalePriceGBP() {
+        return prod_sale_price_gbp;
+    }
+
+    public BigDecimal getSalePriceHKD() {
+        return prod_sale_price_hkd;
+    }
+
+    public BigDecimal getSalePriceJPY() {
+        return prod_sale_price_jpy;
+    }
+
+    public BigDecimal getSalePriceKRW() {
+        return prod_sale_price_krw;
+    }
+
+    public BigDecimal getSalePriceNZD() {
+        return prod_sale_price_nzd;
+    }
+
+    public BigDecimal getSalePriceSGD() {
+        return prod_sale_price_sgd;
+    }
+
+    public BigDecimal getSalePriceUSD() {
+        return prod_sale_price_usd;
+    }
+
+    public BigDecimal getSalePriceZAR() {
+        return prod_sale_price_zar;
+    }
 }
