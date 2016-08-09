@@ -225,9 +225,9 @@ public class SwipeHQClient {
         }
 
         if ("POST".equalsIgnoreCase(type)) {
-            return transport.doPost(request.url(), params, responseClass);
+            return transport.doPost(request.url(), reqParams, responseClass);
         } else if ("GET".equalsIgnoreCase(type)) {
-            return transport.doGet(request.url(), params, responseClass);
+            return transport.doGet(request.url(), reqParams, responseClass);
         }
         return null;
     }

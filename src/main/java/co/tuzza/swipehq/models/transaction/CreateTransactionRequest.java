@@ -18,6 +18,7 @@ package co.tuzza.swipehq.models.transaction;
 import co.tuzza.swipehq.fields.Country;
 import co.tuzza.swipehq.fields.Currency;
 import co.tuzza.swipehq.models.BaseRequest;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +41,7 @@ public class CreateTransactionRequest implements BaseRequest {
 
     private String td_item;
     private String td_description;
-    private String td_amount;
+    private BigDecimal td_amount;
     private String td_duration;
     private String td_default_quantity;
     private String td_user_data;
@@ -104,7 +105,7 @@ public class CreateTransactionRequest implements BaseRequest {
         return this;
     }
 
-    public String getAmount() {
+    public BigDecimal getAmount() {
         return td_amount;
     }
 
@@ -113,11 +114,11 @@ public class CreateTransactionRequest implements BaseRequest {
      *
      * @param td_amount
      */
-    public void setAmount(String td_amount) {
+    public void setAmount(BigDecimal td_amount) {
         this.td_amount = td_amount;
     }
 
-    public CreateTransactionRequest withAmount(String td_amount) {
+    public CreateTransactionRequest withAmount(BigDecimal td_amount) {
         this.td_amount = td_amount;
 
         return this;
@@ -378,7 +379,7 @@ public class CreateTransactionRequest implements BaseRequest {
      * @param td_country
      */
     public void setCountry(String td_country) {
-        this.td_country = Country.valueOf(td_country);
+        this.td_country = Country.findByName(td_country);
     }
 
     /**

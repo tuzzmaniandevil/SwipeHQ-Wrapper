@@ -287,4 +287,14 @@ public enum Country {
         return name;
     }
 
+    public static Country findByName(String n) {
+        for (Country c : Country.values()) {
+            if (c.getName().equalsIgnoreCase(n)) {
+                return c;
+            }
+        }
+
+        return null;
+    }
+
 }

@@ -87,6 +87,7 @@ public class AsyncHttpTransport implements HttpTransport {
                 for (Map.Entry<String, String> entry : params.entrySet()) {
                     requestBuilder.addFormParam(entry.getKey(), entry.getValue());
                 }
+                requestBuilder.addHeader("Content-Type", "application/x-www-form-urlencoded");
             }
 
             ListenableFuture<Response> exec = requestBuilder.execute();
