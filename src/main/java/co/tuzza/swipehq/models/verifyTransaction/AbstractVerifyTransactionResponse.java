@@ -16,6 +16,12 @@
 package co.tuzza.swipehq.models.verifyTransaction;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.io.IOException;
 import java.math.BigDecimal;
 
 /**
@@ -26,11 +32,16 @@ public class AbstractVerifyTransactionResponse {
 
     @JsonProperty(value = "transaction_id", required = false)
     private String transaction_id;
+
     @JsonProperty(value = "status", required = false)
     private String status;
+
     @JsonProperty(value = "transaction_approved", required = false)
-    private String transaction_approved;
+    @JsonDeserialize(using = StringBooleanDeserializer.class)
+    private Boolean transaction_approved;
+
     @JsonProperty(value = "transaction_fee", required = false)
+    @JsonDeserialize(using = TransactionFeeDeserializer.class)
     private BigDecimal transaction_fee;
 
     /**
@@ -57,17 +68,44 @@ public class AbstractVerifyTransactionResponse {
      *
      * @return
      */
-    public String getTransactionApproved() {
+    public Boolean getTransactionApproved() {
         return transaction_approved;
     }
 
     /**
      * This response field will only appear if the transaction is accepted and
-     * will always be either an amount or "Error" or "Not yet available"
+     * will always be either an amount or null
      *
      * @return
      */
     public BigDecimal getTransactionFee() {
         return transaction_fee;
+    }
+
+    public static class StringBooleanDeserializer extends JsonDeserializer<Boolean> {
+
+        @Override
+        public Boolean deserialize(JsonParser parser, DeserializationContext context) throws IOException, JsonProcessingException {
+            return "yes".equalsIgnoreCase(parser.getText());
+        }
+    }
+
+    public static class TransactionFeeDeserializer extends JsonDeserializer<BigDecimal> {
+
+        @Override
+        public BigDecimal deserialize(JsonParser parser, DeserializationContext context) throws IOException, JsonProcessingException {
+            boolean numeric = parser.getCurrentToken().isNumeric();
+
+            if (numeric) {
+                return parser.getDecimalValue();
+            } else {
+                try {
+                    return new BigDecimal(parser.getText());
+                } catch (NumberFormatException ex) {
+                }
+            }
+
+            return null;
+        }
     }
 }
