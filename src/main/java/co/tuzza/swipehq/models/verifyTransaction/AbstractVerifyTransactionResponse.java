@@ -38,7 +38,7 @@ public class AbstractVerifyTransactionResponse {
 
     @JsonProperty(value = "transaction_approved", required = false)
     @JsonDeserialize(using = StringBooleanDeserializer.class)
-    private Boolean transaction_approved;
+    private boolean transaction_approved;
 
     @JsonProperty(value = "transaction_fee", required = false)
     @JsonDeserialize(using = TransactionFeeDeserializer.class)
@@ -68,7 +68,7 @@ public class AbstractVerifyTransactionResponse {
      *
      * @return
      */
-    public Boolean getTransactionApproved() {
+    public boolean getTransactionApproved() {
         return transaction_approved;
     }
 
