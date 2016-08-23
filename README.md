@@ -19,6 +19,6 @@ And adding this dependency:
 <dependency>
     <groupId>co.tuzza</groupId>
     <artifactId>SwipeHQ-Wrapper</artifactId>
-    <version>1.5</version>
+    <version>1.6</version>
 </dependency>
 ```
