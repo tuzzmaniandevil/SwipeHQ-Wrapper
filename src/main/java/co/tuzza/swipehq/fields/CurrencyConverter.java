@@ -23,7 +23,7 @@ import java.io.IOException;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class CurrencyConverter extends TypeAdapter<Currency> {
 

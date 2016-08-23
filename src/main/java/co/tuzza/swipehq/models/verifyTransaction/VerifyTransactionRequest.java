@@ -23,7 +23,7 @@ import java.util.Map;
  * The Verify Transaction API is used to check the status and verify a
  * particular transaction
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class VerifyTransactionRequest implements BaseRequest {
 

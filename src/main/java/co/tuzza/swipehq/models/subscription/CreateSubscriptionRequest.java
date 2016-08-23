@@ -30,7 +30,7 @@ import java.util.Map;
  * Subscriptions page, where the items details (subscribers details,
  * subscription price etc) are displayed.
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class CreateSubscriptionRequest implements BaseRequest {
 

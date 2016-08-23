@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class CreateTransactionResponse extends BaseResponse<IdentifierResponse> {
 

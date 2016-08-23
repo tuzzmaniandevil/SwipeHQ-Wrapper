@@ -25,7 +25,7 @@ import java.util.Map;
  * results through the use of the search_by (column name) and keyword (row
  * value).
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class FetchProductsRequest implements BaseRequest {
 

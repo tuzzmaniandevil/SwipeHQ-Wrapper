@@ -17,7 +17,7 @@ package co.tuzza.swipehq.fields;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public enum AmountType {
 

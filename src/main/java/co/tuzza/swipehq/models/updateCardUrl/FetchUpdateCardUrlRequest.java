@@ -25,7 +25,7 @@ import java.util.Map;
  * merchant_id and API key, and loads the subscribers data based off a
  * contract_id that must be passed in.
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class FetchUpdateCardUrlRequest implements BaseRequest {
 

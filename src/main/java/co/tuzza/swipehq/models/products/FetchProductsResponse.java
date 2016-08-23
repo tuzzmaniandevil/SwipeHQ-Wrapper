@@ -19,7 +19,7 @@ import co.tuzza.swipehq.models.BaseResponse;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class FetchProductsResponse extends BaseResponse<ProductList> {
 

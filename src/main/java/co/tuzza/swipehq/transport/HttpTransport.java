@@ -19,7 +19,7 @@ import java.util.Map;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public interface HttpTransport {
 

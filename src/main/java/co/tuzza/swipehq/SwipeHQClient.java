@@ -41,9 +41,11 @@ import java.util.Map;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class SwipeHQClient {
+
+    public static final String VERSION = "1.5";
 
     private final Map<String, String> params = new LinkedHashMap();
     private final HttpTransport transport;

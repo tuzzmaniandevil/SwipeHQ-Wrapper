@@ -25,7 +25,7 @@ import java.util.Map;
  * customers to purchase. After a product has been made it may then be used with
  * the payments page, where the the Product ID is required.
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class CreateProductRequest implements BaseRequest {
 

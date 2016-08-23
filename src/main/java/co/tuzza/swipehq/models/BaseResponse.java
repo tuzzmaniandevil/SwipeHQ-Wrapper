@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  * @param <T>
  */
 public abstract class BaseResponse<T> {

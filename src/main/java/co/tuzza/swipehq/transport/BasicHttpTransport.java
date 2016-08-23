@@ -29,7 +29,7 @@ import java.util.Map;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class BasicHttpTransport implements HttpTransport {
 

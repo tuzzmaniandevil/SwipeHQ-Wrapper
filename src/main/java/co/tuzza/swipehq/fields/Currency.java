@@ -18,7 +18,7 @@ package co.tuzza.swipehq.fields;
 /**
  * These are the current currencies that the SwipeHQ system supports.
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public enum Currency {
 

@@ -20,7 +20,7 @@ import co.tuzza.swipehq.models.ChargeTokenResp;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class ChargeTokenResponse extends BaseResponse<ChargeTokenResp> {
 

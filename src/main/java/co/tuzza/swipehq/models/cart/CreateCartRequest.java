@@ -33,7 +33,7 @@ import java.util.Map;
  * this API is that a identifier can be setup for multiple products on your
  * website.
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class CreateCartRequest implements BaseRequest {
 

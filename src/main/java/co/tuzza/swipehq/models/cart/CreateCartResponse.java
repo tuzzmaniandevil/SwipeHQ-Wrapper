@@ -20,7 +20,7 @@ import co.tuzza.swipehq.models.IdentifierResponse;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class CreateCartResponse extends BaseResponse<IdentifierResponse> {
 

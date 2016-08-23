@@ -33,7 +33,7 @@ import java.util.Map;
  * is that a identifier can be setup for any item on your website, even if it is
  * unknown to Swipe Checkout.
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class CreateTransactionRequest implements BaseRequest {
 

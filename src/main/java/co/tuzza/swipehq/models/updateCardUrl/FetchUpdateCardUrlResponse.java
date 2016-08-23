@@ -20,7 +20,7 @@ import co.tuzza.swipehq.models.UrlResponse;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class FetchUpdateCardUrlResponse extends BaseResponse<UrlResponse> {
 

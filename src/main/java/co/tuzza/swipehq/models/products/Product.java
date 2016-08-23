@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class Product {
 

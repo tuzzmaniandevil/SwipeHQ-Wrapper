@@ -20,7 +20,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public class ProductList extends HashMap<String, Product> {
 

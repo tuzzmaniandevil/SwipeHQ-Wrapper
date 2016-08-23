@@ -18,7 +18,7 @@ package co.tuzza.swipehq.fields;
 /**
  * Countries Supported by SwipeHQ
  *
- * @author Wesley <wesley@tuzza.co>
+ * @author Wesley
  */
 public enum Country {
 

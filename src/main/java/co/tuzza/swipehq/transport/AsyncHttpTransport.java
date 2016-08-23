@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  * an HttpTransport using AsyncHttpClient. see
  * <a href="https://github.com/AsyncHttpClient/async-http-client">https://github.com/AsyncHttpClient/async-http-client</a>
  *
- * @author dylan
+ * @author Wesley
  */
 public class AsyncHttpTransport implements HttpTransport {
 
