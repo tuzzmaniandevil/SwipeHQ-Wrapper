@@ -2,13 +2,17 @@
 a lightweight Java wrapper for the SwipeHQ API
 
 ## Using this with Maven
-You can easily use this package using Maven by adding this repository:
+This package is available in the JCenter repository, Here are the details to use it:
 
 ```
-</repositories>
+<repositories>
     <repository>
-        <id>Tuzza-Maven</id>
-        <url>http://dl.bintray.com/tuzzmaniandevil/Tuzza</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>central</id>
+        <name>bintray</name>
+        <url>http://jcenter.bintray.com</url>
     </repository>
 </repositories>
 ```
@@ -18,7 +22,7 @@ And adding this dependency:
 ```
 <dependency>
     <groupId>co.tuzza</groupId>
-    <artifactId>SwipeHQ-Wrapper</artifactId>
+    <artifactId>swipehq</artifactId>
     <version>1.6</version>
 </dependency>
 ```
