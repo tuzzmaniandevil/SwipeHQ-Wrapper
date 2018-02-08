@@ -4,6 +4,12 @@ a lightweight Java wrapper for the [SwipeHQ](https://www.swipehq.co.nz/) API
 # Table of contents
 - [Using Maven](#using-maven)
 
+## SwipeHQ Developer Documentation
+* [SwipeHQ Developer Documentation](https://merchant.swipehq.com/admin/main/index.php?module=developers&action=index)
+  * [Live Payment Notification (LPN)](https://merchant.swipehq.com/admin/main/index.php?module=developers&action=lpn)
+
+**Note: To be able to access the  you require an account.**
+
 ## Using Maven
 This package is available in the JCenter repository, Here are the details to use it:
 
