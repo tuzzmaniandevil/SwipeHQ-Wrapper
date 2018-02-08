@@ -36,6 +36,7 @@ import co.tuzza.swipehq.models.verifyTransaction.VerifyTransactionRequest;
 import co.tuzza.swipehq.models.verifyTransaction.VerifyTransactionResponse;
 import co.tuzza.swipehq.transport.AsyncHttpTransport;
 import co.tuzza.swipehq.transport.HttpTransport;
+import java.security.NoSuchAlgorithmException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -56,7 +57,13 @@ public class SwipeHQClient {
         this.transport = transport;
     }
 
-    public SwipeHQClient(String merchantId, String apiKey) {
+    /**
+     *
+     * @param merchantId
+     * @param apiKey
+     * @throws NoSuchAlgorithmException
+     */
+    public SwipeHQClient(String merchantId, String apiKey) throws NoSuchAlgorithmException {
         params.put("merchant_id", merchantId);
         params.put("api_key", apiKey);
         this.transport = new AsyncHttpTransport();

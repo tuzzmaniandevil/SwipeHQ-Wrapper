@@ -20,13 +20,15 @@ import com.ning.http.client.AsyncHttpClientConfig;
 import com.ning.http.client.ListenableFuture;
 import com.ning.http.client.Response;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import javax.net.ssl.SSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * an HttpTransport using AsyncHttpClient. see
+ * an HttpTransport using AsyncHttpClient with TLSv1.2. see
  * <a href="https://github.com/AsyncHttpClient/async-http-client">https://github.com/AsyncHttpClient/async-http-client</a>
  *
  * @author Wesley
@@ -37,8 +39,15 @@ public class AsyncHttpTransport implements HttpTransport {
 
     private final AsyncHttpClient client;
 
-    public AsyncHttpTransport() {
-        client = new AsyncHttpClient(new AsyncHttpClientConfig.Builder().build());
+    /**
+     *
+     * @throws NoSuchAlgorithmException if TLSv1.2 is not supported
+     */
+    public AsyncHttpTransport() throws NoSuchAlgorithmException {
+        SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+        client = new AsyncHttpClient(new AsyncHttpClientConfig.Builder()
+                .setSSLContext(sslContext)
+                .build());
     }
 
     @Override

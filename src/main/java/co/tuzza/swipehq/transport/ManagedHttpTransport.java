@@ -16,10 +16,12 @@
 package co.tuzza.swipehq.transport;
 
 import co.tuzza.swipehq.SwipeHQClient;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.net.ssl.SSLContext;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -45,7 +47,7 @@ public class ManagedHttpTransport implements HttpTransport {
     private final int connectionTimeout;
     private final int socketTimeout;
     private final PoolingHttpClientConnectionManager clientConnectionManager;
-    private final static Map<String, ManagedHttpTransport> instances = new HashMap<>();
+    private final static Map<String, ManagedHttpTransport> INSTANCES = new HashMap<>();
 
     /**
      * Gets an instance with the default connection timeout of 5000 and the
@@ -66,10 +68,10 @@ public class ManagedHttpTransport implements HttpTransport {
      */
     public static ManagedHttpTransport getInstance(int connectionTimeout, int socketTimeout) {
         String key = "ct-" + connectionTimeout + "-st-" + socketTimeout;
-        ManagedHttpTransport instance = instances.get(key);
+        ManagedHttpTransport instance = INSTANCES.get(key);
         if (instance == null) {
             instance = new ManagedHttpTransport(connectionTimeout, socketTimeout);
-            instances.put(key, instance);
+            INSTANCES.put(key, instance);
         }
         return instance;
     }
@@ -135,11 +137,14 @@ public class ManagedHttpTransport implements HttpTransport {
         return builder.build();
     }
 
-    private HttpClient getHttpClient() {
+    private HttpClient getHttpClient() throws NoSuchAlgorithmException {
+        SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+
         HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();
         httpClientBuilder.setUserAgent("SwipeHQClient " + SwipeHQClient.VERSION);
         httpClientBuilder.setConnectionManager(clientConnectionManager);
         httpClientBuilder.setDefaultRequestConfig(getRequestConfig());
+        httpClientBuilder.setSSLContext(sslContext);
 
         return httpClientBuilder.build();
 

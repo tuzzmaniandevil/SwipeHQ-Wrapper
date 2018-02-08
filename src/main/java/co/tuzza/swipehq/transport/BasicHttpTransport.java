@@ -26,6 +26,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.Map;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
 
 /**
  *
@@ -54,6 +56,12 @@ public class BasicHttpTransport implements HttpTransport {
         httpConn.setRequestMethod(requestMethod);
         httpConn.setDoInput(true);
         httpConn.setDoOutput(true);
+
+        if (httpConn instanceof HttpsURLConnection) {
+            HttpsURLConnection httpsConn = (HttpsURLConnection) httpConn;
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+            httpsConn.setSSLSocketFactory(sslContext.getSocketFactory());
+        }
 
         OutputStream os = httpConn.getOutputStream();
         BufferedWriter writer = new BufferedWriter(
