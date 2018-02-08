@@ -2,9 +2,9 @@
 a lightweight Java wrapper for the [SwipeHQ](https://www.swipehq.co.nz/) API
 
 # Table of contents
-- [Using this with Maven](#using-this-with-maven)
+- [Using Maven](#using-maven)
 
-## Using this with Maven
+## Using Maven
 This package is available in the JCenter repository, Here are the details to use it:
 
 ```xml
