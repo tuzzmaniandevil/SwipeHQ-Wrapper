@@ -1,4 +1,4 @@
-# SwipeHQ-Wrapper
+# SwipeHQ-Wrapper [![Build Status](https://travis-ci.org/tuzzmaniandevil/SwipeHQ-Wrapper.svg?branch=master)](https://travis-ci.org/tuzzmaniandevil/SwipeHQ-Wrapper)
 a lightweight Java wrapper for the SwipeHQ API
 
 ## Using this with Maven

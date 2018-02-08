@@ -4,4 +4,3 @@ script: "mvn clean install -Dmaven.javadoc.skip=true -B -V"
 jdk:
   - oraclejdk8
   - oraclejdk9
-  - openjdk7
