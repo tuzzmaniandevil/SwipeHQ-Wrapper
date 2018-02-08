@@ -17,9 +17,10 @@ package co.tuzza.swipehq.models.lpn;
 
 import co.tuzza.swipehq.fields.Currency;
 import co.tuzza.swipehq.fields.CurrencyConverter;
-import com.google.gson.Gson;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
+import co.tuzza.swipehq.transport.ResponseParser;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.math.BigDecimal;
 import java.util.Map;
 import org.slf4j.LoggerFactory;
@@ -37,9 +38,9 @@ public class LivePaymentNotification {
 
         if (params != null) {
             try {
-                Gson gson = new Gson();
-                String json = gson.toJson(params);
-                return gson.fromJson(json, LivePaymentNotification.class);
+                ObjectMapper om = new ObjectMapper();
+                String json = om.writeValueAsString(params);
+                return ResponseParser.parseResponse(json, LivePaymentNotification.class);
             } catch (Exception ex) {
                 log.error("Error parsing LivePaymentNotification: {}", ex.getMessage(), ex);
             }
@@ -48,32 +49,32 @@ public class LivePaymentNotification {
         return lpn;
     }
 
-    @SerializedName("status")
+    @JsonProperty("status")
     private String status;
 
-    @SerializedName("identifier_id")
+    @JsonProperty("identifier_id")
     private String identifier_id;
 
-    @SerializedName("transaction_id")
+    @JsonProperty("transaction_id")
     private String transaction_id;
 
-    @SerializedName("amount")
+    @JsonProperty("amount")
     private BigDecimal amount;
 
-    @SerializedName("name_on_card")
+    @JsonProperty("name_on_card")
     private String name_on_card;
 
-    @SerializedName("customer_email")
+    @JsonProperty("customer_email")
     private String customer_email;
 
-    @SerializedName("currency")
-    @JsonAdapter(CurrencyConverter.class)
+    @JsonProperty("currency")
+    @JsonDeserialize(converter = CurrencyConverter.class)
     private Currency currency;
 
-    @SerializedName("td_user_data")
+    @JsonProperty("td_user_data")
     private String td_user_data;
 
-    @SerializedName("token")
+    @JsonProperty("token")
     private String token;
 
     public String getStatus() {

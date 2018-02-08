@@ -39,12 +39,23 @@ import co.tuzza.swipehq.transport.HttpTransport;
 import java.security.NoSuchAlgorithmException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import javax.net.ssl.SSLContext;
 
 /**
  *
  * @author Wesley
  */
 public class SwipeHQClient {
+
+    private static SSLContext SSL_CONTEXT;
+
+    public static SSLContext getSSLContext() throws NoSuchAlgorithmException {
+        if (SSL_CONTEXT == null) {
+            SSL_CONTEXT = SSLContext.getInstance("TLSv1.2");
+        }
+
+        return SSL_CONTEXT;
+    }
 
     public static final String VERSION = "1.6";
 

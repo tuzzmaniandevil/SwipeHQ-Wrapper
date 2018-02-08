@@ -20,7 +20,7 @@ import co.tuzza.swipehq.fields.Country;
 import co.tuzza.swipehq.fields.Currency;
 import java.math.BigDecimal;
 import java.util.Map;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *

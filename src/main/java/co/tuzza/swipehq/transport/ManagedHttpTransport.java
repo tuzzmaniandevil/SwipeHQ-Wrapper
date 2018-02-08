@@ -46,6 +46,7 @@ public class ManagedHttpTransport implements HttpTransport {
 
     private final int connectionTimeout;
     private final int socketTimeout;
+    private final SSLContext sslContext;
     private final PoolingHttpClientConnectionManager clientConnectionManager;
     private final static Map<String, ManagedHttpTransport> INSTANCES = new HashMap<>();
 
@@ -54,8 +55,9 @@ public class ManagedHttpTransport implements HttpTransport {
      * default socket timeout of 30000
      *
      * @return an instance of ManagedHttpTransport
+     * @throws java.security.NoSuchAlgorithmException
      */
-    public static ManagedHttpTransport getInstance() {
+    public static ManagedHttpTransport getInstance() throws NoSuchAlgorithmException {
         return getInstance(5000, 30000);
     }
 
@@ -65,8 +67,9 @@ public class ManagedHttpTransport implements HttpTransport {
      * @param connectionTimeout The connection timeout in milliseconds
      * @param socketTimeout The socket timeout in milliseconds
      * @return an instance of ManagedHttpTransport
+     * @throws java.security.NoSuchAlgorithmException
      */
-    public static ManagedHttpTransport getInstance(int connectionTimeout, int socketTimeout) {
+    public static ManagedHttpTransport getInstance(int connectionTimeout, int socketTimeout) throws NoSuchAlgorithmException {
         String key = "ct-" + connectionTimeout + "-st-" + socketTimeout;
         ManagedHttpTransport instance = INSTANCES.get(key);
         if (instance == null) {
@@ -76,9 +79,11 @@ public class ManagedHttpTransport implements HttpTransport {
         return instance;
     }
 
-    protected ManagedHttpTransport(int connectionTimeout, int socketTimeout) {
+    protected ManagedHttpTransport(int connectionTimeout, int socketTimeout) throws NoSuchAlgorithmException {
         this.connectionTimeout = connectionTimeout;
         this.socketTimeout = socketTimeout;
+
+        this.sslContext = SwipeHQClient.getSSLContext();
 
         this.clientConnectionManager = new PoolingHttpClientConnectionManager();
         this.clientConnectionManager.setDefaultMaxPerRoute(200);
@@ -137,9 +142,7 @@ public class ManagedHttpTransport implements HttpTransport {
         return builder.build();
     }
 
-    private HttpClient getHttpClient() throws NoSuchAlgorithmException {
-        SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-
+    private HttpClient getHttpClient() {
         HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();
         httpClientBuilder.setUserAgent("SwipeHQClient " + SwipeHQClient.VERSION);
         httpClientBuilder.setConnectionManager(clientConnectionManager);

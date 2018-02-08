@@ -17,7 +17,7 @@ package co.tuzza.swipehq.models.transaction;
 
 import co.tuzza.swipehq.models.BaseResponse;
 import co.tuzza.swipehq.models.IdentifierResponse;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *

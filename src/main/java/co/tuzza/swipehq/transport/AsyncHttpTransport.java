@@ -15,6 +15,7 @@
  */
 package co.tuzza.swipehq.transport;
 
+import co.tuzza.swipehq.SwipeHQClient;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.AsyncHttpClientConfig;
 import com.ning.http.client.ListenableFuture;
@@ -37,6 +38,7 @@ public class AsyncHttpTransport implements HttpTransport {
 
     private static final Logger log = LoggerFactory.getLogger(AsyncHttpTransport.class);
 
+    private final SSLContext sslContext;
     private final AsyncHttpClient client;
 
     /**
@@ -44,9 +46,9 @@ public class AsyncHttpTransport implements HttpTransport {
      * @throws NoSuchAlgorithmException if TLSv1.2 is not supported
      */
     public AsyncHttpTransport() throws NoSuchAlgorithmException {
-        SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-        client = new AsyncHttpClient(new AsyncHttpClientConfig.Builder()
-                .setSSLContext(sslContext)
+        this.sslContext = SwipeHQClient.getSSLContext();
+        this.client = new AsyncHttpClient(new AsyncHttpClientConfig.Builder()
+                .setSSLContext(this.sslContext)
                 .build());
     }
 
@@ -54,6 +56,7 @@ public class AsyncHttpTransport implements HttpTransport {
     public <T> T doGet(String url, Map<String, String> params, Class<T> c) throws InterruptedException, ExecutionException, IOException {
         try {
             AsyncHttpClient.BoundRequestBuilder requestBuilder = client.prepareGet(url);
+            requestBuilder.setHeader("User-Agent", "SwipeHQClient " + SwipeHQClient.VERSION);
 
             if (params != null && !params.isEmpty()) {
                 for (Map.Entry<String, String> entry : params.entrySet()) {
@@ -91,6 +94,7 @@ public class AsyncHttpTransport implements HttpTransport {
     public <T> T doPost(String url, Map<String, String> params, Class<T> c) throws InterruptedException, ExecutionException, IOException {
         try {
             AsyncHttpClient.BoundRequestBuilder requestBuilder = client.preparePost(url);
+            requestBuilder.setHeader("User-Agent", "SwipeHQClient " + SwipeHQClient.VERSION);
 
             if (params != null && !params.isEmpty()) {
                 for (Map.Entry<String, String> entry : params.entrySet()) {

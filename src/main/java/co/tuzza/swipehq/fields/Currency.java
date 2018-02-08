@@ -22,18 +22,18 @@ package co.tuzza.swipehq.fields;
  */
 public enum Currency {
 
+    AustralianDollars("Australian dollars", "AUD"),
+    CanadianDollars("Canadian dollars", "CAD"),
+    ChineseYuan("Chinese yuan", "CNY"),
     Euros("Euros", "EUR"),
+    GreatBritishPounds("Great British pounds", "GBP"),
+    HongKongDollars("Hong Kong dollars", "HKD"),
+    JapaneseYen("Japanese yen", "JPY"),
+    NewZealandDollars("New Zealand dollars", "NZD"),
+    SingaporeanDollars("Singaporean dollars", "SGD"),
     SouthAfricanRand("South African rand", "ZAR"),
     SouthKoreanWon("South Korean won", "KRW"),
-    HongKongDollars("Hong Kong dollars", "HKD"),
-    ChineseYuan("Chinese yuan", "CNY"),
-    CanadianDollars("Canadian dollars", "CAD"),
-    AustralianDollars("Australian dollars", "AUD"),
-    NewZealandDollars("New Zealand dollars", "NZD"),
-    UnitedStatesDollars("United States dollars", "USD"),
-    SingaporeanDollars("Singaporean dollars", "SGD"),
-    GreatBritishPounds("Great British pounds", "GBP"),
-    JapaneseYen("Japanese yen", "JPY");
+    UnitedStatesDollars("United States dollars", "USD");
 
     private final String name;
     private final String symbol;

@@ -15,6 +15,7 @@
  */
 package co.tuzza.swipehq.transport;
 
+import co.tuzza.swipehq.SwipeHQClient;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -25,6 +26,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -34,6 +36,12 @@ import javax.net.ssl.SSLContext;
  * @author Wesley
  */
 public class BasicHttpTransport implements HttpTransport {
+
+    private final SSLContext sslContext;
+
+    public BasicHttpTransport() throws NoSuchAlgorithmException {
+        sslContext = SSLContext.getInstance("TLSv1.2");
+    }
 
     @Override
     public <T> T doGet(String URL, Map<String, String> params, Class<T> c) throws Exception {
@@ -56,10 +64,10 @@ public class BasicHttpTransport implements HttpTransport {
         httpConn.setRequestMethod(requestMethod);
         httpConn.setDoInput(true);
         httpConn.setDoOutput(true);
+        httpConn.setRequestProperty("User-Agent", "SwipeHQClient " + SwipeHQClient.VERSION);
 
         if (httpConn instanceof HttpsURLConnection) {
             HttpsURLConnection httpsConn = (HttpsURLConnection) httpConn;
-            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             httpsConn.setSSLSocketFactory(sslContext.getSocketFactory());
         }
 

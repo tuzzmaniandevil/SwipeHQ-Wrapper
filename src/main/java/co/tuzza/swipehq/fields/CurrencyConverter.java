@@ -15,37 +15,33 @@
  */
 package co.tuzza.swipehq.fields;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonToken;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.databind.util.Converter;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *
  * @author Wesley
  */
-public class CurrencyConverter extends TypeAdapter<Currency> {
+public class CurrencyConverter implements Converter<String, Currency> {
 
     @Override
-    public void write(JsonWriter out, Currency value) throws IOException {
-        if (value == null) {
-            out.nullValue();
-            return;
+    public Currency convert(String value) {
+        if (StringUtils.isBlank(value)) {
+            return null;
         }
-
-        out.value(value.getSymbol());
+        return Currency.findByAny(value);
     }
 
     @Override
-    public Currency read(JsonReader in) throws IOException {
-        if (in.peek() == JsonToken.NULL) {
-            in.nextNull();
-            return null;
-        }
+    public JavaType getInputType(TypeFactory typeFactory) {
+        return typeFactory.constructType(String.class);
+    }
 
-        String s = in.nextString();
-        return Currency.findByAny(s);
+    @Override
+    public JavaType getOutputType(TypeFactory typeFactory) {
+        return typeFactory.constructType(Currency.class);
     }
 
 }
