@@ -1,10 +1,13 @@
 # SwipeHQ-Wrapper [![Build Status](https://travis-ci.org/tuzzmaniandevil/SwipeHQ-Wrapper.svg?branch=master)](https://travis-ci.org/tuzzmaniandevil/SwipeHQ-Wrapper)
-a lightweight Java wrapper for the SwipeHQ API
+a lightweight Java wrapper for the [SwipeHQ](https://www.swipehq.co.nz/) API
+
+# Table of contents
+- [Using this with Maven](#using-this-with-maven)
 
 ## Using this with Maven
 This package is available in the JCenter repository, Here are the details to use it:
 
-```
+```xml
 <repositories>
     <repository>
         <snapshots>
@@ -19,7 +22,7 @@ This package is available in the JCenter repository, Here are the details to use
 
 And adding this dependency:
 
-```
+```xml
 <dependency>
     <groupId>co.tuzza</groupId>
     <artifactId>swipehq</artifactId>
