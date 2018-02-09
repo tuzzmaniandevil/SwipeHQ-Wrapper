@@ -33,8 +33,9 @@ And adding this dependency:
 ## Like my work? Buy me a beer!
 I do all the development in my spare time and at my own cost, If you benefit from my work feel free to buy me a beer!
 Crypto:
-XMR: 46KSEKPHuii9ks21i8r6BmBByFbwscQ1XN9yhaKZdHjPbDPRJU6NHUQRVYEEAAS7drJSAkrpjNRkd3ChvZzN2iJ73UvZ1FZ
-ETN: etnkKzbVfzeCZCxtC8Tj4tYdp3k9hpYoNMhjjyfHEveFJcpTzky82SrWcwsQt5A2rdVWD7gM8kFbq3WoWFqvuQaK8B1TSbVGFZ
+XMR: `46KSEKPHuii9ks21i8r6BmBByFbwscQ1XN9yhaKZdHjPbDPRJU6NHUQRVYEEAAS7drJSAkrpjNRkd3ChvZzN2iJ73UvZ1FZ`
+ETN: `etnkKzbVfzeCZCxtC8Tj4tYdp3k9hpYoNMhjjyfHEveFJcpTzky82SrWcwsQt5A2rdVWD7gM8kFbq3WoWFqvuQaK8B1TSbVGFZ`
 
 PayPal:
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/nz/cgi-bin/webscr?cmd=_flow&SESSION=oZ2mFtA1y0q6BoBknVYRhGh1WWm-ckvoErnulhG5rB1p8oO4esLUzTfkkgW&dispatch=5885d80a13c0db1f8e263663d3faee8dc3f308debf7330dd8d0b0a9f21afd7d3&rapidsState=Donation__DonationFlow___StateDonationLogin&rapidsStateSignature=aec7a897f5b3ece080075a3d1b247f73cbf03449)
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2AJAQQR6RNV5E)
