@@ -34,6 +34,7 @@ And adding this dependency:
 I do all the development in my spare time and at my own cost, If you benefit from my work feel free to buy me a beer!
 
 **Crypto:**
+
 XMR: `46KSEKPHuii9ks21i8r6BmBByFbwscQ1XN9yhaKZdHjPbDPRJU6NHUQRVYEEAAS7drJSAkrpjNRkd3ChvZzN2iJ73UvZ1FZ`
 
 ETN: `etnkKzbVfzeCZCxtC8Tj4tYdp3k9hpYoNMhjjyfHEveFJcpTzky82SrWcwsQt5A2rdVWD7gM8kFbq3WoWFqvuQaK8B1TSbVGFZ`
