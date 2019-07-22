@@ -26,7 +26,7 @@ And adding this dependency:
 <dependency>
     <groupId>co.tuzza</groupId>
     <artifactId>swipehq</artifactId>
-    <version>1.6</version>
+    <version>1.7</version>
 </dependency>
 ```
 
